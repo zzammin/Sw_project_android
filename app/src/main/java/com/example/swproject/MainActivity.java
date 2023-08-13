@@ -3,9 +3,12 @@ package com.example.swproject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -21,34 +24,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        ViewPager2 pager = findViewById(R.id.pager);
+
         pager.setOffscreenPageLimit(5);
 
-        ChallengePagerAdapter adapter = new ChallengePagerAdapter(getSupportFragmentManager());
-        Fragment1 fragment1 = new Fragment1();
-        adapter.addItem(fragment1);
-
-        pager.setAdapter(adapter);
+        pager.setAdapter(new ChallengePagerAdapter(this));
     }
 
-    class ChallengePagerAdapter extends FragmentStatePagerAdapter{
+    class ChallengePagerAdapter extends FragmentStateAdapter {
         ArrayList<Fragment> items = new ArrayList<Fragment>();
-        public ChallengePagerAdapter(@NonNull FragmentManager fm) {
-            super(fm);
+
+        public ChallengePagerAdapter(FragmentActivity fragmentActivity) {
+            super(fragmentActivity);
         }
 
         public void addItem(Fragment item){
             items.add(item);
         }
 
+        @NonNull
         @Override
-        public Fragment getItem(int position) {
-            return items.get(position);
+        public Fragment createFragment(int position) {
+            return new Fragment1();
         }
 
         @Override
-        public int getCount() {
-            return items.size();
+        public int getItemCount() {
+            return 5;
         }
     }
 }
