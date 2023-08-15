@@ -24,7 +24,7 @@
         app:showAsAction="always"/>
 
     <item
-        android:id="@+id/user"
+        android:id="@+id/mypage"
         android:icon="@drawable/user"
         android:enabled="true"
         android:title="내 정보"
