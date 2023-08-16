@@ -54,7 +54,7 @@
         <LinearLayout
             android:id="@+id/fregment_linear"
             android:layout_width="match_parent"
-            android:layout_height="600dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -73,7 +73,7 @@
         app:labelVisibilityMode="labeled"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fregment_linear"
+        app:layout_constraintTop_toBottomOf="@id/content_scroll"
         app:menu="@menu/bottom_menu" />
 
 
