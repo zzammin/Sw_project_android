@@ -14,21 +14,22 @@
         android:orientation="vertical">
 
         <!--챌린지 목록-->
+
+        <!--오늘의 챌린지!-->
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/pager"
             android:layout_width="match_parent"
-            android:layout_height="255dp"
-            android:layout_marginTop="15dp"
+            android:layout_height="280dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
             android:layout_marginRight="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <!--오늘의 챌린지!-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/today_challenge_layout"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="95dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="10dp"

@@ -44,16 +44,16 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.fregment_linear,home).commit();
 
         // id가 pager인 viewpager가 home.xml에 있기 때문에 inflate
-        LayoutInflater inflater = LayoutInflater.from(this);
-        View inflate_home=inflater.inflate(R.layout.home,null);
+//        LayoutInflater inflater = LayoutInflater.from(this);
+//        View inflate_home=inflater.inflate(R.layout.home,null);
         //
 
         // 얘를 Home에 옮겨야 될 듯?? 어떻게 옮기지?
-        ViewPager2 pager = inflate_home.findViewById(R.id.pager);
-
-        pager.setOffscreenPageLimit(5);
-
-        pager.setAdapter(new ChallengePagerAdapter(this));
+//        ViewPager2 pager = inflate_home.findViewById(R.id.pager);
+//
+//        pager.setOffscreenPageLimit(5);
+//
+//        pager.setAdapter(new ChallengePagerAdapter(this));
 
         NavigationBarView navigationBarView = findViewById(R.id.bottom_tab);
         navigationBarView.setOnItemReselectedListener(new NavigationBarView.OnItemReselectedListener() {
@@ -80,28 +80,5 @@ public class MainActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.fregment_linear,home).commit();
             }
         });
-    }
-
-    class ChallengePagerAdapter extends FragmentStateAdapter {
-        ArrayList<Fragment> items = new ArrayList<Fragment>();
-
-        public ChallengePagerAdapter(FragmentActivity fragmentActivity) {
-            super(fragmentActivity);
-        }
-
-        public void addItem(Fragment item){
-            items.add(item);
-        }
-
-        @NonNull
-        @Override
-        public Fragment createFragment(int position) {
-            return new ChallengeFragment1();
-        }
-
-        @Override
-        public int getItemCount() {
-            return 5;
-        }
     }
 }
