@@ -30,16 +30,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.416" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="40dp"
+        <Button
+            android:id="@+id/setting_button"
             android:layout_height="40dp"
+            android:layout_width="40dp"
             android:layout_marginEnd="28dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/setting" />
+            android:background="@drawable/setting"
+            >
+        </Button>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
