@@ -23,6 +23,9 @@ import com.google.android.material.navigation.NavigationBarView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    // fragment를 사용하려면 FragmentManager가 필요
+    private FragmentManager fragmentManager = getSupportFragmentManager();
+    // Fragment 클래스와 참조변수들
     Home home;
     Ranking ranking;
     Market market;
@@ -34,51 +37,48 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // fragment 모음
+        // Fragment 모음
         home = new Home();
         ranking = new Ranking();
         market = new Market();
         community = new Community();
         mypage = new MyPage();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fregment_linear,home).commit();
+        // fragment_linear (fragment가 들어갈 layout)에 fragment 추가
+        fragmentManager.beginTransaction().add(R.id.fragment_linear,home).commit();
+        fragmentManager.beginTransaction().add(R.id.fragment_linear,ranking).hide(ranking).commit();
+        fragmentManager.beginTransaction().add(R.id.fragment_linear,market).hide(market).commit();
+        fragmentManager.beginTransaction().add(R.id.fragment_linear,community).hide(community).commit();
+        fragmentManager.beginTransaction().add(R.id.fragment_linear,mypage).hide(mypage).commit();
 
-        // id가 pager인 viewpager가 home.xml에 있기 때문에 inflate
-//        LayoutInflater inflater = LayoutInflater.from(this);
-//        View inflate_home=inflater.inflate(R.layout.home,null);
-        //
-
-        // 얘를 Home에 옮겨야 될 듯?? 어떻게 옮기지?
-//        ViewPager2 pager = inflate_home.findViewById(R.id.pager);
-//
-//        pager.setOffscreenPageLimit(5);
-//
-//        pager.setAdapter(new ChallengePagerAdapter(this));
-
+        // 하단 바
         NavigationBarView navigationBarView = findViewById(R.id.bottom_tab);
         navigationBarView.setOnItemReselectedListener(new NavigationBarView.OnItemReselectedListener() {
             @Override
             public void onNavigationItemReselected(@NonNull MenuItem item) {
                 int itemId = item.getItemId();
-
+                // 하단 바에서 선택하는 icon에 따라 show, hide 되는 fragment 변경
                 if (itemId == R.id.ranking) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fregment_linear, ranking).commit();
+                    fragmentManager.beginTransaction().show(ranking).hide(home).hide(market).hide(community).hide(mypage).commit();
                 } else if (itemId == R.id.market) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fregment_linear, market).commit();
+                    fragmentManager.beginTransaction().show(market).hide(home).hide(ranking).hide(community).hide(mypage).commit();
                 } else if (itemId == R.id.community) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fregment_linear, community).commit();
+                    fragmentManager.beginTransaction().show(community).hide(home).hide(ranking).hide(market).hide(mypage).commit();
                 } else if (itemId == R.id.mypage) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fregment_linear, mypage).commit();
+                    fragmentManager.beginTransaction().show(mypage).hide(home).hide(ranking).hide(market).hide(community).commit();
                 }
             }
         });
 
+        // Cake It! 로고 click 시 home 으로 돌아오기
         TextView cake_it = (TextView) findViewById(R.id.Cake_it);
         cake_it.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.fregment_linear,home).commit();
+
+                fragmentManager.beginTransaction().show(home).hide(ranking).hide(market).hide(community).hide(mypage).commit();
             }
         });
+
     }
 }

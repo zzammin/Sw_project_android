@@ -52,7 +52,7 @@
 
         <!--fragment 들어갈 layout-->
         <LinearLayout
-            android:id="@+id/fregment_linear"
+            android:id="@+id/fragment_linear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
