@@ -120,7 +120,8 @@
             android:paddingLeft="14dp"
             android:paddingRight="14dp">
 
-            <androidx.appcompat.widget.AppCompatButton
+
+            <ImageView
                 android:id="@+id/acheivedChallenge"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -129,7 +130,50 @@
                 android:text="button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"></androidx.appcompat.widget.AppCompatButton>
+                app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="상"
+                android:textSize="20dp"
+                android:background="@drawable/circle_shape_red"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/acheivedChallenge"></androidx.appcompat.widget.AppCompatButton>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="중"
+                android:textSize="20dp"
+                android:background="@drawable/circle_shape_orange"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button_3"
+                app:layout_constraintStart_toEndOf="@+id/button_1"
+                app:layout_constraintTop_toTopOf="@+id/acheivedChallenge"></androidx.appcompat.widget.AppCompatButton>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/circle_shape_green"
+                android:text="하"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/acheivedChallenge"
+                app:layout_constraintVertical_bias="0.0"></androidx.appcompat.widget.AppCompatButton>
 
             <TextView
                 android:layout_width="wrap_content"
