@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,7 +18,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import java.util.ArrayList;
 
-public class Home extends Fragment {
+public class Home extends Fragment{
     ViewPager2 viewPager2;
     ChallengePagerAdapter adapter;
     @Nullable
@@ -54,6 +55,7 @@ public class Home extends Fragment {
             public void onClick(View view) {
                 // 여기서 position을 늘리다가 5 이상 되면 다시 0으로 돌려야될 듯
                 // Log.d("Button","next 버튼 클릭됨");
+                Toast.makeText(getContext(),"버튼을 눌렸습니다.",Toast.LENGTH_LONG).show();
                 int currentPosition = viewPager2.getCurrentItem(); // viewPager의 현재 아이템의 위치를 알고 싶으면 getCurrentItem() 메소드
                 int itemCount = adapter.getItemCount();
                 // Log.d("position","현재 위치 : "+currentPosition);

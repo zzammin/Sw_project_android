@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
         cake_it.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 fragmentManager.beginTransaction().show(home).hide(ranking).hide(market).hide(community).hide(mypage).commit();
             }
         });
