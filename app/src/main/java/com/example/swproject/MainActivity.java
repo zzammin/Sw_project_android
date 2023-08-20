@@ -11,6 +11,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,6 +32,16 @@ public class MainActivity extends AppCompatActivity {
     Market market;
     Community community;
     MyPage mypage;
+    ChallengeFragment1 challengeFragment1;
+    ChallengeFragment2 challengeFragment2;
+
+//    public void showChallengeResult(int nextPosition) {
+//        Home homeFragment = (Home) getSupportFragmentManager().findFragmentById(R.id.fragment_linear);
+//        Bundle bundle = new Bundle();
+//        bundle.putInt("nextPosition", nextPosition);
+//        homeFragment.setArguments(bundle);
+//        Log.d("Challenge","bundle"+bundle);
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         market = new Market();
         community = new Community();
         mypage = new MyPage();
+        challengeFragment1 = new ChallengeFragment1();
+        challengeFragment2 = new ChallengeFragment2();
 
         // fragment_linear (fragment가 들어갈 layout)에 fragment 추가
         fragmentManager.beginTransaction().add(R.id.fragment_linear,home).commit();
@@ -50,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager.beginTransaction().add(R.id.fragment_linear,market).hide(market).commit();
         fragmentManager.beginTransaction().add(R.id.fragment_linear,community).hide(community).commit();
         fragmentManager.beginTransaction().add(R.id.fragment_linear,mypage).hide(mypage).commit();
+//        fragmentManager.beginTransaction().replace(R.id.pager,challengeFragment1).commit();
+
 
         // 하단 바
         NavigationBarView navigationBarView = findViewById(R.id.bottom_tab);
