@@ -49,6 +49,7 @@
         android:id="@+id/content_scroll"
         android:layout_width="match_parent"
         android:layout_height="560dp"
+        android:layout_weight="1"
         android:contentDescription="scroll">
         <!-- height를 matchparent 하고 하단 바가 위에 겹치게 되는게 낫지 않을까? _jm-->
 
