@@ -67,20 +67,43 @@
             android:layout_width="match_parent"
             android:layout_height="170dp"
             android:id="@+id/Today_Sale_pager">
-
         </androidx.viewpager.widget.ViewPager>
 
-        <!--best seller : 뷰페이저로 해야함-->
-        <androidx.constraintlayout.widget.ConstraintLayout
+
+        <!--best Item : 뷰페이저로 해야함-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="인기 상품"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp">
+        </TextView>
+        <androidx.viewpager.widget.ViewPager
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </androidx.constraintlayout.widget.ConstraintLayout>
-        
-        <!--categories-->
-        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_height="100dp"
+            android:id="@+id/Market_BestItem_pager">
+        </androidx.viewpager.widget.ViewPager>
+
+
+        <!--categories : 뷰페이저로 해야함-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="카테고리"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="25dp">
+        </TextView>
+        <androidx.viewpager.widget.ViewPager
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="200dp"
+            android:id="@+id/Market_Category_pager">
+        </androidx.viewpager.widget.ViewPager>
     </LinearLayout>
     
 
