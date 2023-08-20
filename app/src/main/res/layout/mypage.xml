@@ -185,6 +185,17 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/acheivedChallenge"
                 app:layout_constraintStart_toStartOf="parent"></TextView>
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="18dp"
+                android:text="상 중 하 버튼을 클릭하여 달성한 챌린지 리스트를 확인하세요"
+                android:textSize="9dp"
+                app:layout_constraintBottom_toTopOf="@+id/acheivedChallenge"
+                app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
