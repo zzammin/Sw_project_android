@@ -15,8 +15,6 @@
         android:orientation="vertical">
 
         <!--챌린지 목록-->
-
-        <!--오늘의 챌린지!-->
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/pager"
             android:layout_width="match_parent"
@@ -27,6 +25,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <!--챌린지 목록 위치(position)-->
+        <TextView
+            android:id="@+id/challenge_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="안녕"
+            android:textColor="@color/material_dynamic_neutral40"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+            <!--android:layout_gravity => 해당 뷰가 부모 컨테이너 내에서 어떻게 위치해야 하는지를 지정-->
+
+        <!--오늘의 챌린지!-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/today_challenge_layout"
             android:layout_width="match_parent"
@@ -122,9 +134,8 @@
                 android:text="남은 시간"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         <!--여기에 전체 현황-->
         <androidx.constraintlayout.widget.ConstraintLayout
