@@ -26,82 +26,157 @@
         </androidx.appcompat.widget.AppCompatButton>
     </LinearLayout>
 
-
     <!--게시판-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/textView49"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
             android:text="게시판"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"></TextView>
 
-        <TableLayout
-            android:id="@+id/tableLayout2"
+        <ImageView
+            android:id="@+id/imageView21"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="160dp"
             android:layout_marginStart="14dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="14dp"
             android:background="@drawable/box_theme"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/textView49"></ImageView>
 
-            <TableRow>
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/comment"
+            app:layout_constraintStart_toStartOf="@+id/imageView21"
+            app:layout_constraintTop_toTopOf="@+id/imageView21"></ImageButton>
 
-                <ImageView
-                    android:layout_height="50dp"
-                    android:background="@drawable/ic_launcher_foreground"></ImageView>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/appCompatButton"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/box_theme"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="자유게시판"
+            app:layout_constraintStart_toEndOf="@+id/imageButton"
+            app:layout_constraintTop_toTopOf="@+id/imageView21"></androidx.appcompat.widget.AppCompatButton>
 
-                <TextView
-                    android:layout_gravity="center"
-                    android:text="자유게시판"></TextView>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/appCompatButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/box_theme"
+            android:text="정보게시판"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            app:layout_constraintStart_toEndOf="@+id/imageButton2"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatButton"></androidx.appcompat.widget.AppCompatButton>
 
-                <ImageView
-                    android:layout_height="50dp"
-                    android:background="@drawable/ic_launcher_foreground"></ImageView>
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/search"
+            app:layout_constraintStart_toStartOf="@+id/imageView21"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton" />
 
-                <TextView
-                    android:layout_gravity="center"
-                    android:text="모집게시판"></TextView>
-            </TableRow>
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/fire"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView21"
+            app:layout_constraintStart_toStartOf="@+id/imageView21"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton2"></ImageButton>
 
-            <TableRow>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/box_theme"
+            android:text="HOT게시판"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageButton3"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatButton2"></androidx.appcompat.widget.AppCompatButton>
 
-                <ImageView android:background="@drawable/ic_launcher_foreground"></ImageView>
+        <!--우측 게시판-->
 
-                <TextView
-                    android:layout_gravity="center"
-                    android:text="정보게시판"></TextView>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/appCompatButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/box_theme"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="공모전게시판"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageButton5"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatButton3"></androidx.appcompat.widget.AppCompatButton>
 
-                <ImageView android:background="@drawable/ic_launcher_foreground"></ImageView>
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/users_alt"
+            app:layout_constraintStart_toEndOf="@+id/appCompatButton"
+            app:layout_constraintTop_toTopOf="@+id/imageView21"></ImageButton>
 
-                <TextView
-                    android:layout_gravity="center"
-                    android:text="공모전게시판"></TextView>
-            </TableRow>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/appCompatButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/box_theme"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="모집게시판"
+            app:layout_constraintStart_toEndOf="@+id/imageButton4"
+            app:layout_constraintTop_toTopOf="@+id/imageView21"></androidx.appcompat.widget.AppCompatButton>
 
-            <TableRow>
-
-                <ImageView android:background="@drawable/ic_launcher_foreground"></ImageView>
-
-                <TextView
-                    android:layout_gravity="center"
-                    android:text="HOT 게시판"></TextView>
-            </TableRow>
-
-        </TableLayout>
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/graduation_cap"
+            app:layout_constraintStart_toEndOf="@+id/appCompatButton2"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton4"></ImageButton>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--공지사항-->
