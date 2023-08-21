@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager.beginTransaction().add(R.id.fragment_linear,market).hide(market).commit();
         fragmentManager.beginTransaction().add(R.id.fragment_linear,community).hide(community).commit();
         fragmentManager.beginTransaction().add(R.id.fragment_linear,mypage).hide(mypage).commit();
-//        fragmentManager.beginTransaction().replace(R.id.pager,challengeFragment1).commit();
 
 
         // 하단 바
