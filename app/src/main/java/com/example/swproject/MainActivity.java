@@ -54,11 +54,7 @@ public class MainActivity extends AppCompatActivity implements FragmentChangeLis
         challengeFragment2 = new ChallengeFragment2();
 
         // fragment_linear (fragment가 들어갈 layout)에 fragment 추가
-        fragmentManager.beginTransaction().add(R.id.fragment_linear,home).commit();
-        fragmentManager.beginTransaction().add(R.id.fragment_linear,ranking).hide(ranking).commit();
-        fragmentManager.beginTransaction().add(R.id.fragment_linear,market).hide(market).commit();
-        fragmentManager.beginTransaction().add(R.id.fragment_linear,community).hide(community).commit();
-        fragmentManager.beginTransaction().add(R.id.fragment_linear,mypage).hide(mypage).commit();
+        fragmentManager.beginTransaction().replace(R.id.fragment_linear,home).commit();
 
         // 하단 바
         NavigationBarView navigationBarView = findViewById(R.id.bottom_tab);
