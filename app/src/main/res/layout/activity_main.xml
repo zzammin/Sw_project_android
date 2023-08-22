@@ -8,7 +8,6 @@
 
     <!--Linear(1. Cake It!, 옵션 2. ScrollView(fragment 내용) 3. 하단 바) -->
 
-
     <!--Cake It! 과 옵션-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bar"
