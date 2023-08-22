@@ -75,7 +75,7 @@ public class Community extends Fragment {
         });
         //hot 게시판 버튼
         Button hotBtn = (Button)rootView.findViewById(R.id.hotBoardBtn);
-        infoBtn.setOnClickListener(new View.OnClickListener() {
+        hotBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Community_Board_Hot cBoardhotFragment = new Community_Board_Hot();
