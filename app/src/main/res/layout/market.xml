@@ -5,13 +5,164 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!--상단 즐겨찾기 / 내 포인트 부분-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/Market_constraint_1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="356dp"
-        android:text="market"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="14dp"
+            android:background="@drawable/box_theme"
+            android:gravity="center"
+            android:text="즐겨찾기"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></androidx.appcompat.widget.AppCompatButton>
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="내 Point : "
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/userPoint"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <TextView
+            android:id="@+id/userPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginEnd="14dp"
+            android:gravity="center"
+            android:text="17036"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/Market_constraint_1">
+        
+        <!--today's sale : 뷰페이저-->
+        <androidx.viewpager.widget.ViewPager
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:id="@+id/Today_Sale_pager">
+        </androidx.viewpager.widget.ViewPager>
+
+
+        <!--best Item : 뷰페이저로 해야함-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="인기 상품"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp">
+        </TextView>
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/Market_BestItem_pager">
+        </androidx.viewpager.widget.ViewPager>
+
+
+        <!--categories : 뷰페이저로 해야함-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="카테고리"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="25dp">
+        </TextView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:background="@drawable/box_theme"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"></ImageView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/imageView13"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/box_theme"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="아바타"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/imageView13"
+                app:layout_constraintTop_toBottomOf="@+id/imageView13"></TextView>
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:gravity="center"
+                android:text="프로필\n효과"
+                android:lineSpacingMultiplier="0.8"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/imageView12"
+                app:layout_constraintTop_toBottomOf="@+id/imageView12"></TextView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/imageView12"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/box_theme"
+                app:layout_constraintStart_toEndOf="@+id/imageView13"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+    
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
