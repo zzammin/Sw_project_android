@@ -76,7 +76,7 @@
             app:layout_constraintTop_toTopOf="@+id/imageView21"></ImageButton>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/appCompatButton"
+            android:id="@+id/freeBoardBtn"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginStart="5dp"
@@ -89,7 +89,7 @@
             app:layout_constraintTop_toTopOf="@+id/imageView21"></androidx.appcompat.widget.AppCompatButton>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/appCompatButton2"
+            android:id="@+id/infoBoardBtn"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginStart="5dp"
@@ -99,7 +99,7 @@
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
             app:layout_constraintStart_toEndOf="@+id/imageButton2"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatButton"></androidx.appcompat.widget.AppCompatButton>
+            app:layout_constraintTop_toBottomOf="@+id/freeBoardBtn"></androidx.appcompat.widget.AppCompatButton>
 
         <ImageButton
             android:id="@+id/imageButton2"
@@ -133,14 +133,15 @@
             android:text="HOT게시판"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
+            android:id="@+id/hotBoardBtn"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageButton3"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatButton2"></androidx.appcompat.widget.AppCompatButton>
+            app:layout_constraintTop_toBottomOf="@+id/infoBoardBtn"></androidx.appcompat.widget.AppCompatButton>
 
         <!--우측 게시판-->
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/appCompatButton4"
+            android:id="@+id/contestBoardBtn"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginTop="16dp"
@@ -151,7 +152,7 @@
             android:text="공모전게시판"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageButton5"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatButton3"></androidx.appcompat.widget.AppCompatButton>
+            app:layout_constraintTop_toBottomOf="@+id/collectBoardBtn"></androidx.appcompat.widget.AppCompatButton>
 
         <ImageButton
             android:id="@+id/imageButton4"
@@ -160,11 +161,11 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/users_alt"
-            app:layout_constraintStart_toEndOf="@+id/appCompatButton"
+            app:layout_constraintStart_toEndOf="@+id/freeBoardBtn"
             app:layout_constraintTop_toTopOf="@+id/imageView21"></ImageButton>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/appCompatButton3"
+            android:id="@+id/collectBoardBtn"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginStart="5dp"
@@ -183,7 +184,7 @@
             android:layout_marginStart="28dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/graduation_cap"
-            app:layout_constraintStart_toEndOf="@+id/appCompatButton2"
+            app:layout_constraintStart_toEndOf="@+id/infoBoardBtn"
             app:layout_constraintTop_toBottomOf="@+id/imageButton4"></ImageButton>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
