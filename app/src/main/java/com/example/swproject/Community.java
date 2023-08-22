@@ -20,22 +20,6 @@ public class Community extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.community,container,false);
-        //뷰페이저
-        ViewPager CommunityStudyPager = (ViewPager)rootView.findViewById(R.id.study_pager);
-        CommunityStudyPager.setOffscreenPageLimit(3);
-        StudyViewPagerAdapter adapter = new StudyViewPagerAdapter(requireActivity().getSupportFragmentManager());
-
-        Community_Study_Fragment1 fragment1 = new Community_Study_Fragment1();
-        adapter.addItem(fragment1);
-
-        Community_Study_Fragment2 fragment2 = new Community_Study_Fragment2();
-        adapter.addItem(fragment2);
-
-        Community_Study_Fragment3 fragment3 = new Community_Study_Fragment3();
-        adapter.addItem(fragment3);
-
-        CommunityStudyPager.setAdapter(adapter);
-
         //게시판 button 이벤트
         //자유게시판 버튼
         Button freeBoardBtn = (Button)rootView.findViewById(R.id.freeBoardBtn);
@@ -82,7 +66,21 @@ public class Community extends Fragment {
                 requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fregment_linear, cBoardhotFragment).commit();
             }
         });
+        //뷰페이저
+        ViewPager CommunityStudyPager = (ViewPager)rootView.findViewById(R.id.study_pager);
+        CommunityStudyPager.setOffscreenPageLimit(3);
+        StudyViewPagerAdapter adapter = new StudyViewPagerAdapter(requireActivity().getSupportFragmentManager());
 
+        Community_Study_Fragment1 fragment1 = new Community_Study_Fragment1();
+        adapter.addItem(fragment1);
+
+        Community_Study_Fragment2 fragment2 = new Community_Study_Fragment2();
+        adapter.addItem(fragment2);
+
+        Community_Study_Fragment3 fragment3 = new Community_Study_Fragment3();
+        adapter.addItem(fragment3);
+
+        CommunityStudyPager.setAdapter(adapter);
         return rootView;
     }
 
