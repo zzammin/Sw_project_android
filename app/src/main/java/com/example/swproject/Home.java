@@ -23,15 +23,14 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import java.util.ArrayList;
 
+import me.relex.circleindicator.CircleIndicator3;
+
 public class Home extends Fragment {
     ViewPager2 viewPager2;
     ChallengePagerAdapter adapter;
     LinearLayout viewPager_Indicators;
     ArrayList<Fragment> items = new ArrayList<>();
-    LinearLayout indicators_layout;
-    TextView[] dots;
-
-    // TextView cp; // challenge_position 줄임말
+    private CircleIndicator3 mIndicator;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -49,76 +48,24 @@ public class Home extends Fragment {
         adapter = new ChallengePagerAdapter(this);
 
         // 클래스를 사용하려면 참조변수를 통해 클래스를 가리키고 그 참조변수를 사용해야 한다
+        ChooseChallenge choose = new ChooseChallenge();
+        adapter.addItem(choose);
         ChallengeFragment1 cf1 = new ChallengeFragment1();
         adapter.addItem(cf1);
         ChallengeFragment2 cf2 = new ChallengeFragment2();
         adapter.addItem(cf2);
+        ChallengeFragment3 cf3 = new ChallengeFragment3();
+        adapter.addItem(cf3);
+        ChallengeFragment4 cf4 = new ChallengeFragment4();
+        adapter.addItem(cf4);
 
         viewPager2.setAdapter(adapter);
 
-        indicators_layout=view.findViewById(R.id.indicators);
-        dots=new TextView[items.size()];
+        // Indicator 생성
+        mIndicator = view.findViewById(R.id.indicators);
+        mIndicator.setViewPager(viewPager2);
+        mIndicator.createIndicators(items.size(),0);
 
-        // !!!!!!!!!!
-        // textView인 dots가 계속해서 추가되는 문제가 있음.. 어떻게 해결해야 할까?
-        // !!!!!!!!!!
-        Log.d("dots 개수","개수 : "+dots.length);
-        Log.d("dots 개수2","개수 : "+items.size());
-
-        if(dots.length==items.size()) {  // dots 배열이 비어 있을 때 실행하도록
-            dotsIndicator();
-        }
-
-        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-                selectedIndicator(position);
-            }
-        });
-
-//        // viewPager2의 현재 프래그먼트 위치를 받아와서 TextView에 적용
-//        cp = view.findViewById(R.id.challenge_position);
-//        cp.setText(String.valueOf(viewPager2.getCurrentItem()+1));
-//
-//        // viewPager2의 페이지 변경 리스너를 설정
-//        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-//            @Override
-//            public void onPageSelected(int position) {
-//                cp.setText(String.valueOf(position+1)); // 페이지 변경 시 TextView 업데이트
-//            }
-//        });
-    }
-
-    // indicator 기능 설정
-    private void dotsIndicator(){
-        for(int i = 0; i < dots.length ; i++){
-            dots[i] = new TextView(requireContext());
-            dots[i].setText(Html.fromHtml("&#9679")); // HTML 유니코드
-            dots[i].setTextSize(20);
-
-            // 텍스트뷰 레이아웃 설정
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT
-            );
-            params.leftMargin=20; // 텍스트뷰 거리 조절
-            dots[i].setLayoutParams(params); // 텍스트뷰에 레이아웃 적용
-            indicators_layout.addView(dots[i]); // 레이아웃에 텍스트뷰 적용
-
-        }
-    }
-
-    // indicator 색상 설정
-    private void selectedIndicator(int position){
-        for(int i = 0; i<dots.length; i++){
-            if(i==position){ // 선택되면
-                dots[i].setTextColor(ContextCompat.getColor(getContext(),
-                        R.color.black));
-            }else{ // 안되면
-                dots[i].setTextColor(ContextCompat.getColor(getContext(),
-                        com.google.android.material.R.color.material_dynamic_secondary80));
-            }
-        }
     }
 
     class ChallengePagerAdapter extends FragmentStateAdapter {

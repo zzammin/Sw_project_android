@@ -20,7 +20,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.swproject.ChallengeFragment1;
+import com.example.swproject.ChooseChallenge;
 import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements FragmentChangeLis
     Market market;
     Community community;
     MyPage mypage;
-    ChallengeFragment1 challengeFragment1;
+    ChooseChallenge challengeFragment1;
     ChallengeFragment2 challengeFragment2;
     MainChallenges mainChallenges = new MainChallenges();
 
@@ -50,30 +50,28 @@ public class MainActivity extends AppCompatActivity implements FragmentChangeLis
         market = new Market();
         community = new Community();
         mypage = new MyPage();
-        challengeFragment1 = new ChallengeFragment1();
-        challengeFragment2 = new ChallengeFragment2();
 
-        // fragment_linear (fragment가 들어갈 layout)에 fragment 추가
         fragmentManager.beginTransaction().replace(R.id.fragment_linear,home).commit();
 
         // 하단 바
         NavigationBarView navigationBarView = findViewById(R.id.bottom_tab);
-        navigationBarView.setOnItemReselectedListener(new NavigationBarView.OnItemReselectedListener() {
+        navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
-            public void onNavigationItemReselected(@NonNull MenuItem item) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int itemId = item.getItemId();
-                // 하단 바에서 선택하는 icon에 따라 show, hide 되는 fragment 변경
-                if (itemId == R.id.ranking) {
-                    fragmentManager.beginTransaction().replace(R.id.fragment_linear,ranking).commit();
-                } else if (itemId == R.id.market) {
-                    fragmentManager.beginTransaction().replace(R.id.fragment_linear,market).commit();
-                } else if (itemId == R.id.community) {
-                    fragmentManager.beginTransaction().replace(R.id.fragment_linear,community).commit();
-                } else if (itemId == R.id.mypage) {
-                    fragmentManager.beginTransaction().replace(R.id.fragment_linear,mypage).commit();
+                if (itemId == R.id.ranking && fragmentManager.findFragmentById(R.id.fragment_linear) != ranking) {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_linear, ranking).commit();
+                } else if (itemId == R.id.market && fragmentManager.findFragmentById(R.id.fragment_linear) != market) {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_linear, market).commit();
+                } else if (itemId == R.id.community && fragmentManager.findFragmentById(R.id.fragment_linear) != community) {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_linear, community).commit();
+                } else if (itemId == R.id.mypage && fragmentManager.findFragmentById(R.id.fragment_linear) != mypage) {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_linear, mypage).commit();
                 }
+                return true;
             }
         });
+
 
         // Cake It! 로고 click 시 home 으로 돌아오기
         ImageView home_button = (ImageView) findViewById(R.id.home_button);
