@@ -12,7 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SwProject"
         tools:targetApi="28">
-        <!--targetApi 이상의 API에서만 작동이 된다-->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Register"
+            android:exported="false" /> <!-- targetApi 이상의 API에서만 작동이 된다 -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
