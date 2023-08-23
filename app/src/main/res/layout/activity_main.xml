@@ -72,10 +72,11 @@
         android:layout_gravity="bottom"
         app:itemBackground="@color/material_dynamic_neutral80"
         app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/content_scroll"
-        app:menu="@menu/bottom_menu" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 
 </LinearLayout>

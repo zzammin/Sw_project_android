@@ -7,27 +7,27 @@
         android:icon="@drawable/ranking"
         android:enabled="true"
         android:title="랭킹"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/market"
         android:icon="@drawable/market"
         android:enabled="true"
         android:title="상점"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/community"
         android:icon="@drawable/community"
         android:enabled="true"
         android:title="커뮤니티"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/mypage"
         android:icon="@drawable/user"
         android:enabled="true"
         android:title="내 정보"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
 
 </menu>
