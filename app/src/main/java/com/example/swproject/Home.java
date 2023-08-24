@@ -49,7 +49,8 @@ public class Home extends Fragment {
 
         // 클래스를 사용하려면 참조변수를 통해 클래스를 가리키고 그 참조변수를 사용해야 한다
 
-        // !!!!!!! 여기서 items에 item이 있을 경우 추가하는 것을 막는 제어문이 있어야 할 듯
+        // items에 item이 있을 경우 추가하는 것을 막는 제어문 필요
+        // => viewPager2의 fragment, indicator의 무한 증식 방지
         if(items.size()==0) {
             ChooseChallenge choose = new ChooseChallenge();
             adapter.addItem(choose);

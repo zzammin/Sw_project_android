@@ -59,10 +59,9 @@ public class MainActivity extends AppCompatActivity implements FragmentChangeLis
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int itemId = item.getItemId();
-//                if (itemId == R.id.ranking && fragmentManager.findFragmentById(R.id.fragment_linear) != home) {
-//                    fragmentManager.beginTransaction().replace(R.id.fragment_linear, home).commit();
-
-                if (itemId == R.id.ranking && fragmentManager.findFragmentById(R.id.fragment_linear) != ranking) {
+                if (itemId == R.id.home && fragmentManager.findFragmentById(R.id.fragment_linear) != home) {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_linear, home).commit();
+                } else if (itemId == R.id.ranking && fragmentManager.findFragmentById(R.id.fragment_linear) != ranking) {
                     fragmentManager.beginTransaction().replace(R.id.fragment_linear, ranking).commit();
                 } else if (itemId == R.id.market && fragmentManager.findFragmentById(R.id.fragment_linear) != market) {
                     fragmentManager.beginTransaction().replace(R.id.fragment_linear, market).commit();
@@ -72,14 +71,6 @@ public class MainActivity extends AppCompatActivity implements FragmentChangeLis
                     fragmentManager.beginTransaction().replace(R.id.fragment_linear, mypage).commit();
                 }
                 return true;
-            }
-        });
-
-        ImageView home_button = (ImageView) findViewById(R.id.home_button);
-        home_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                fragmentManager.beginTransaction().replace(R.id.fragment_linear,home).commit();
             }
         });
     }

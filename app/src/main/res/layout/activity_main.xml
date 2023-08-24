@@ -39,16 +39,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/setting" />
 
-        <ImageView
-            android:id="@+id/home_button"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginRight="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/setting"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/home" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--fragment 내용을 감싸는 Scroll-->
