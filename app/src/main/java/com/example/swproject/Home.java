@@ -28,7 +28,6 @@ import me.relex.circleindicator.CircleIndicator3;
 public class Home extends Fragment {
     ViewPager2 viewPager2;
     ChallengePagerAdapter adapter;
-    LinearLayout viewPager_Indicators;
     ArrayList<Fragment> items = new ArrayList<>();
     private CircleIndicator3 mIndicator;
     @Nullable
@@ -47,17 +46,22 @@ public class Home extends Fragment {
         viewPager2 = view.findViewById(R.id.pager);
         adapter = new ChallengePagerAdapter(this);
 
+
         // 클래스를 사용하려면 참조변수를 통해 클래스를 가리키고 그 참조변수를 사용해야 한다
-        ChooseChallenge choose = new ChooseChallenge();
-        adapter.addItem(choose);
-        ChallengeFragment1 cf1 = new ChallengeFragment1();
-        adapter.addItem(cf1);
-        ChallengeFragment2 cf2 = new ChallengeFragment2();
-        adapter.addItem(cf2);
-        ChallengeFragment3 cf3 = new ChallengeFragment3();
-        adapter.addItem(cf3);
-        ChallengeFragment4 cf4 = new ChallengeFragment4();
-        adapter.addItem(cf4);
+
+        // !!!!!!! 여기서 items에 item이 있을 경우 추가하는 것을 막는 제어문이 있어야 할 듯
+        if(items.size()==0) {
+            ChooseChallenge choose = new ChooseChallenge();
+            adapter.addItem(choose);
+            ChallengeFragment1 cf1 = new ChallengeFragment1();
+            adapter.addItem(cf1);
+            ChallengeFragment2 cf2 = new ChallengeFragment2();
+            adapter.addItem(cf2);
+            ChallengeFragment3 cf3 = new ChallengeFragment3();
+            adapter.addItem(cf3);
+            ChallengeFragment4 cf4 = new ChallengeFragment4();
+            adapter.addItem(cf4);
+        }
 
         viewPager2.setAdapter(adapter);
 
