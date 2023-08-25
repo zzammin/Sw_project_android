@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity implements FragmentChangeLis
     Market market;
     Community community;
     MyPage mypage;
-    ChooseChallenge challengeFragment1;
-    ChallengeFragment2 challengeFragment2;
     MainChallenges mainChallenges = new MainChallenges();
 
 
