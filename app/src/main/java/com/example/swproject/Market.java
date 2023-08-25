@@ -51,6 +51,7 @@ public class Market extends Fragment {
         return rootView;
     }
 
+
     class TodaySaleViewPagerAdapter extends FragmentStatePagerAdapter{
         ArrayList<Fragment> items = new ArrayList<>();
 
@@ -72,6 +73,7 @@ public class Market extends Fragment {
             return items.size();
         }
     }
+
     class BestItemViewPagerAdapter extends FragmentStatePagerAdapter{
         ArrayList<Fragment> items = new ArrayList<>();
 
