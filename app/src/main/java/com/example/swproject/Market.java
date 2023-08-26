@@ -20,6 +20,8 @@ public class Market extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.market,container,false);
 
+        // !!!!!!!!!!! 다른 프래그먼트 갔다가 market 프래그먼트 오면 뷰페이저들이 없어지는 문제 !!!!!!!!!!!!!!!
+
         //오늘의 할인 부분 뷰페이저
         ViewPager MarketSalePager = (ViewPager)rootView.findViewById(R.id.Today_Sale_pager);
         MarketSalePager.setOffscreenPageLimit(3);
@@ -51,6 +53,7 @@ public class Market extends Fragment {
         return rootView;
     }
 
+    // 여기까지가 문제
 
     class TodaySaleViewPagerAdapter extends FragmentStatePagerAdapter{
         ArrayList<Fragment> items = new ArrayList<>();
