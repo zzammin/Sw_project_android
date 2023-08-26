@@ -20,7 +20,7 @@ public class Community_Board_Collect extends Fragment {
             @Override
             public void onClick(View view) {
                 Community community = new Community();
-                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fregment_linear,community).commit();
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_linear,community).commit();
             }
         });
         return rootView;
