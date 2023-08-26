@@ -1,5 +1,6 @@
 package com.example.swproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,6 +45,8 @@ public class MyPage extends Fragment {
                 //메인 액티비티가 아닌 곳에서 프래그먼트 전환하려면 requireActivity()를 써줘야 한다.
             }
         });
+
+
         return rootView;
 
     }
