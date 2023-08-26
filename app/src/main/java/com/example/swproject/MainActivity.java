@@ -1,4 +1,5 @@
 package com.example.swproject;
+package org.techtown.database;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +23,12 @@ import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 
+<<<<<<< Updated upstream
 public class MainActivity extends AppCompatActivity {
+=======
+
+public class MainActivity extends AppCompatActivity implements FragmentChangeListener{
+>>>>>>> Stashed changes
     // fragment를 사용하려면 FragmentManager가 필요
     private FragmentManager fragmentManager = getSupportFragmentManager();
     // Fragment 클래스와 참조변수들
