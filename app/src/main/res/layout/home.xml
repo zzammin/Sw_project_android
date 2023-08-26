@@ -14,27 +14,41 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!--챌린지 목록-->
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/pager"
+        <FrameLayout
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/gray_shape"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_height="wrap_content">
+            <!--챌린지 목록-->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/gray_shape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
 
-        <!--챌린지 목록 위치(position)-->
-        <LinearLayout
-            android:id="@+id/indicators"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_marginBottom="60dp"
-            android:layout_gravity="center"
-            android:orientation="horizontal"/>
+            <!--챌린지 목록 위치(position)-->
+
+            <me.relex.circleindicator.CircleIndicator3
+                android:id="@+id/indicators"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                app:ci_drawable="@drawable/bg_indicator_active"
+                app:ci_drawable_unselected="@drawable/bg_indicator_inactive" />
+        </FrameLayout>
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/indicators"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="20dp"-->
+<!--            android:layout_marginBottom="60dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:orientation="horizontal"/>-->
 
 
 <!--        <TextView-->
@@ -52,7 +66,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/today_challenge_layout"
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="100dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="10dp"
@@ -65,7 +79,7 @@
                 android:id="@+id/today_challenge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="6dp"
                 android:text="오늘의 챌린지!"
                 android:textColor="@color/black"
@@ -155,7 +169,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/total_current"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="350dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="10dp"
@@ -168,11 +182,11 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="전체 현황"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="28dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -181,19 +195,20 @@
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="현재 진행중인 챌린지"
                 android:textColor="@color/material_dynamic_neutral_variant20"
+                android:textSize="18dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
             <TableLayout
                 android:id="@+id/tableLayout"
                 android:layout_width="377dp"
-                android:layout_height="139dp"
+                android:layout_height="150dp"
                 android:layout_marginStart="7dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="7dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -220,7 +235,7 @@
                 android:layout_width="377dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="7dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="7dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
