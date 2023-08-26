@@ -12,17 +12,28 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
 import java.util.ArrayList;
 
 public class Community extends Fragment {
+    ViewPager2 communityStudyPager;
+    StudyViewPagerAdapter adapter;
+    ArrayList<Fragment> study_items = new ArrayList<>();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.community,container,false);
+        return rootView;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         //게시판 button 이벤트
         //자유게시판 버튼
-        Button freeBoardBtn = (Button)rootView.findViewById(R.id.freeBoardBtn);
+        Button freeBoardBtn = (Button)view.findViewById(R.id.freeBoardBtn);
         freeBoardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,7 +42,7 @@ public class Community extends Fragment {
             }
         });
         // 모집 게시판 버튼
-        Button collectBtn = (Button)rootView.findViewById(R.id.collectBoardBtn);
+        Button collectBtn = (Button)view.findViewById(R.id.collectBoardBtn);
         collectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,7 +51,7 @@ public class Community extends Fragment {
             }
         });
         //정보 게시판 버튼
-        Button infoBtn = (Button)rootView.findViewById(R.id.infoBoardBtn);
+        Button infoBtn = (Button)view.findViewById(R.id.infoBoardBtn);
         infoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,7 +60,7 @@ public class Community extends Fragment {
             }
         });
         //공모전 게시판 버튼
-        Button contestBtn = (Button)rootView.findViewById(R.id.contestBoardBtn);
+        Button contestBtn = (Button)view.findViewById(R.id.contestBoardBtn);
         contestBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,7 +69,7 @@ public class Community extends Fragment {
             }
         });
         //hot 게시판 버튼
-        Button hotBtn = (Button)rootView.findViewById(R.id.hotBoardBtn);
+        Button hotBtn = (Button)view.findViewById(R.id.hotBoardBtn);
         hotBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,40 +78,40 @@ public class Community extends Fragment {
             }
         });
         //뷰페이저
-        ViewPager CommunityStudyPager = (ViewPager)rootView.findViewById(R.id.study_pager);
-        CommunityStudyPager.setOffscreenPageLimit(3);
-        StudyViewPagerAdapter adapter = new StudyViewPagerAdapter(requireActivity().getSupportFragmentManager());
+        communityStudyPager = (ViewPager2)view.findViewById(R.id.study_pager);
+        communityStudyPager.setOffscreenPageLimit(3);
+        adapter = new StudyViewPagerAdapter(this);
 
-        Community_Study_Fragment1 fragment1 = new Community_Study_Fragment1();
-        adapter.addItem(fragment1);
+        if(study_items.size()==0) {
+            Community_Study_Fragment1 fragment1 = new Community_Study_Fragment1();
+            adapter.addItem(fragment1);
 
-        Community_Study_Fragment2 fragment2 = new Community_Study_Fragment2();
-        adapter.addItem(fragment2);
+            Community_Study_Fragment2 fragment2 = new Community_Study_Fragment2();
+            adapter.addItem(fragment2);
 
-        Community_Study_Fragment3 fragment3 = new Community_Study_Fragment3();
-        adapter.addItem(fragment3);
+            Community_Study_Fragment3 fragment3 = new Community_Study_Fragment3();
+            adapter.addItem(fragment3);
+        }
 
-        CommunityStudyPager.setAdapter(adapter);
-        return rootView;
+        communityStudyPager.setAdapter(adapter);
     }
 
-    class StudyViewPagerAdapter extends FragmentStatePagerAdapter{
-        ArrayList<Fragment> items = new ArrayList<>();
-        public StudyViewPagerAdapter(@NonNull FragmentManager fm) {
-            super(fm);
+    class StudyViewPagerAdapter extends FragmentStateAdapter {
+        public StudyViewPagerAdapter(@NonNull Fragment fragment) {
+            super(fragment.requireActivity());
         }
         public void addItem(Fragment item){
-            items.add(item);
+            study_items.add(item);
         }
         @NonNull
         @Override
-        public Fragment getItem(int position) {
-            return items.get(position);
+        public Fragment createFragment(int position) {
+            return study_items.get(position);
         }
 
         @Override
-        public int getCount()  {
-            return items.size();
+        public int getItemCount()  {
+            return study_items.size();
         }
     }
 }
