@@ -62,12 +62,12 @@
         app:layout_constraintTop_toBottomOf="@+id/Market_constraint_1">
         
         <!--today's sale : 뷰페이저-->
-        <androidx.viewpager.widget.ViewPager
-            android:layout_marginTop="15dp"
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/Today_Sale_pager"
             android:layout_width="match_parent"
             android:layout_height="170dp"
-            android:id="@+id/Today_Sale_pager">
-        </androidx.viewpager.widget.ViewPager>
+            android:layout_marginTop="15dp">
+        </androidx.viewpager2.widget.ViewPager2>
 
 
         <!--best Item : 뷰페이저로 해야함-->
