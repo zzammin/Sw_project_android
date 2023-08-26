@@ -81,11 +81,11 @@
             android:textColor="@color/black"
             android:layout_marginTop="20dp">
         </TextView>
-        <androidx.viewpager.widget.ViewPager
+        <androidx.viewpager2.widget.ViewPager2
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:id="@+id/Market_BestItem_pager">
-        </androidx.viewpager.widget.ViewPager>
+        </androidx.viewpager2.widget.ViewPager2>
 
 
         <!--categories : 뷰페이저로 해야함-->
