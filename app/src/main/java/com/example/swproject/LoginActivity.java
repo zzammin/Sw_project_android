@@ -17,19 +17,28 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         EditText addId= (EditText) findViewById(R.id.addID);
-        EditText addPw= (EditText) findViewById(R.id.addPW);
+        EditText addPw= (EditText) findViewById(R.id.checkPW);
         Button loginButton = (Button)findViewById(R.id.loginBtn);
+        Button RegisterButton = (Button)findViewById(R.id.registerBtn_inLogin);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String userID = addId.getText().toString();
-                String userPW = addPw.getText().toString();
-                if (userID.equals("")||userPW.equals("")){
+                String userID = addId.getText().toString().trim();
+                String userPW = addPw.getText().toString().trim();
+                if (userID.isEmpty()||userPW.isEmpty()){
                     Toast.makeText(getApplicationContext(), "아이디와 패스워드를 입력해주세요",Toast.LENGTH_LONG).show();
                 }else {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                 }
+            }
+        });
+
+        RegisterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(getApplicationContext(),Register.class);
+                startActivity(intent2);
             }
         });
     }
