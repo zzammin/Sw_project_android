@@ -25,4 +25,18 @@ public class Community_Board_Contest extends Fragment {
         });
         return rootView;
     }
+
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        Button contestWriteButton = (Button) view.findViewById(R.id.contest_write_button);
+        contestWriteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Contest_write contestWrite = new Contest_write();
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_linear,contestWrite).commit();
+            }
+        });
+
+    }
 }

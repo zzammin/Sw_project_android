@@ -25,4 +25,18 @@ public class Community_Board_Hot extends Fragment {
         });
         return rootView;
     }
+
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        Button hotWriteButton = (Button) view.findViewById(R.id.hot_write_button);
+        hotWriteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Hot_write hotWrite = new Hot_write();
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_linear,hotWrite).commit();
+            }
+        });
+
+    }
 }

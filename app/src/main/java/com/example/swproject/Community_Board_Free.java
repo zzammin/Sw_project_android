@@ -25,4 +25,19 @@ public class Community_Board_Free extends Fragment {
         });
         return rootView;
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        Button freeWriteButton = (Button) view.findViewById(R.id.free_write_button);
+        freeWriteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Free_write freeWrite = new Free_write();
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_linear,freeWrite).commit();
+            }
+        });
+
+    }
 }

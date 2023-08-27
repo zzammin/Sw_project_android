@@ -25,4 +25,18 @@ public class Community_Board_Collect extends Fragment {
         });
         return rootView;
     }
+
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        Button collectWriteButton = (Button) view.findViewById(R.id.collect_write_button);
+        collectWriteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Collect_write collectWrite = new Collect_write();
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_linear,collectWrite).commit();
+            }
+        });
+
+    }
 }

@@ -25,4 +25,18 @@ public class Community_Board_Info extends Fragment {
         });
         return rootView;
     }
+
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        Button infoWriteButton = (Button) view.findViewById(R.id.info_write_button);
+        infoWriteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Info_write infoWrite = new Info_write();
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_linear,infoWrite).commit();
+            }
+        });
+
+    }
 }
