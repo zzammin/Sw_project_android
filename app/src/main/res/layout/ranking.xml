@@ -247,152 +247,160 @@
             android:layout_marginTop="50dp">
 
             <!--전체순위-->
-            <ScrollView
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="14dp">
+
+                <ImageView
+                    android:id="@+id/scrollView19"
+                    android:layout_width="180dp"
+                    android:layout_height="300dp"
+                    android:background="@drawable/box_theme"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+                <TextView
+                    android:id="@+id/textView35"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="14dp">
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="전체 순위"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/scrollView19"
+                    app:layout_constraintTop_toTopOf="@+id/scrollView19"></TextView>
 
-                    <ImageView
-                        android:id="@+id/scrollView19"
-                        android:layout_width="180dp"
-                        android:layout_height="300dp"
-                        android:background="@drawable/box_theme"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"></ImageView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView35">
 
-                    <TextView
-                        android:id="@+id/textView35"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:text="전체 순위"
-                        android:textColor="@color/black"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/scrollView19"
-                        app:layout_constraintTop_toTopOf="@+id/scrollView19"></TextView>
+                    <ScrollView
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:textColor="@color/black"
+                                android:gravity="center"
+                                android:background="@drawable/box_theme"
+                                android:layout_marginBottom="10dp"></TextView>
+                            <TextView
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="2"
+                                android:textColor="@color/black"
+                                android:gravity="center"
+                                android:background="@drawable/box_theme"
+                                android:layout_marginBottom="10dp"></TextView>
+                            <TextView
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="3"
+                                android:textColor="@color/black"
+                                android:gravity="center"
+                                android:background="@drawable/box_theme"
+                                android:layout_marginBottom="10dp"></TextView>
+                            <TextView
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="4"
+                                android:textColor="@color/black"
+                                android:gravity="center"
+                                android:background="@drawable/box_theme"
+                                android:layout_marginBottom="10dp"></TextView>
+                            <TextView
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="5"
+                                android:textColor="@color/black"
+                                android:gravity="center"
+                                android:background="@drawable/box_theme"
+                                android:layout_marginBottom="10dp"></TextView>
+                            <TextView
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="6"
+                                android:textColor="@color/black"
+                                android:gravity="center"
+                                android:background="@drawable/box_theme"
+                                android:layout_marginBottom="10dp"></TextView>
+                            <TextView
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="7"
+                                android:textColor="@color/black"
+                                android:gravity="center"
+                                android:background="@drawable/box_theme"
+                                android:layout_marginBottom="10dp"></TextView>
+                            <TextView
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="8"
+                                android:textColor="@color/black"
+                                android:gravity="center"
+                                android:background="@drawable/box_theme"
+                                android:layout_marginBottom="10dp"></TextView>
+                            <TextView
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="9"
+                                android:textColor="@color/black"
+                                android:gravity="center"
+                                android:background="@drawable/box_theme"
+                                android:layout_marginBottom="10dp"></TextView>
+                            <TextView
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="10"
+                                android:textColor="@color/black"
+                                android:gravity="center"
+                                android:background="@drawable/box_theme"
+                                android:layout_marginBottom="10dp"></TextView>
+                            <TextView
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="11"
+                                android:textColor="@color/black"
+                                android:gravity="center"
+                                android:background="@drawable/box_theme"
+                                android:layout_marginBottom="10dp"></TextView>
+                            <TextView
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="12"
+                                android:textColor="@color/black"
+                                android:gravity="center"
+                                android:background="@drawable/box_theme"
+                                android:layout_marginBottom="10dp"></TextView>
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="240dp"
-                        android:layout_marginTop="10dp"
-                        android:orientation="vertical"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView35">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/box_theme"
-                            android:gravity="center"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:text="1위 유저 : jimin"
-                            android:textColor="@color/black"
-                            android:layout_marginBottom="5dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/box_theme"
-                            android:gravity="center"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:text="2위 유저 : jimin"
-                            android:textColor="@color/black"
-                            android:layout_marginBottom="5dp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/box_theme"
-                            android:gravity="center"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:text="3위 유저 : jimin"
-                            android:textColor="@color/black"
-                            android:layout_marginBottom="5dp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/box_theme"
-                            android:gravity="center"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:text="4위 유저 : jimin"
-                            android:textColor="@color/black"
-                            android:layout_marginBottom="5dp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/box_theme"
-                            android:gravity="center"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:text="5위 유저 : jimin"
-                            android:textColor="@color/black"
-                            android:layout_marginBottom="5dp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/box_theme"
-                            android:gravity="center"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:text="2위 유저 : jimin"
-                            android:textColor="@color/black"
-                            android:layout_marginBottom="5dp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/box_theme"
-                            android:gravity="center"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:text="2위 유저 : jimin"
-                            android:textColor="@color/black"
-                            android:layout_marginBottom="5dp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/box_theme"
-                            android:gravity="center"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:text="2위 유저 : jimin"
-                            android:textColor="@color/black"
-                            android:layout_marginBottom="5dp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/box_theme"
-                            android:gravity="center"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:text="2위 유저 : jimin"
-                            android:textColor="@color/black"
-                            android:layout_marginBottom="5dp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/box_theme"
-                            android:gravity="center"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:text="2위 유저 : jimin"
-                            android:textColor="@color/black"
-                            android:layout_marginBottom="5dp" />
+                        </LinearLayout>
 
-                    </LinearLayout>
+                    </ScrollView>
+                </LinearLayout>
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </ScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
             <!--내 랭킹 : 테이블로 다루는게 나으려나?-->

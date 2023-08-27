@@ -9,7 +9,7 @@
 
     <!--fragment를 감싸는 LinearLayout-->
     <LinearLayout
-        android:id="@+id/fregment_linear"
+        android:id="@+id/fragment_linear"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">

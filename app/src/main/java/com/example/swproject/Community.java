@@ -9,9 +9,6 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentStatePagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -38,7 +35,7 @@ public class Community extends Fragment {
             @Override
             public void onClick(View view) {
                 Community_Board_Free cBoardFreeFragment1 = new Community_Board_Free();
-                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fregment_linear, cBoardFreeFragment1).commit();
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_linear, cBoardFreeFragment1).commit();
             }
         });
         // 모집 게시판 버튼
@@ -47,7 +44,7 @@ public class Community extends Fragment {
             @Override
             public void onClick(View view) {
                 Community_Board_Collect cBoardCollectFragment = new Community_Board_Collect();
-                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fregment_linear, cBoardCollectFragment).commit();
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_linear, cBoardCollectFragment).commit();
             }
         });
         //정보 게시판 버튼
@@ -56,7 +53,7 @@ public class Community extends Fragment {
             @Override
             public void onClick(View view) {
                 Community_Board_Info cBoardInfoFragment = new Community_Board_Info();
-                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fregment_linear, cBoardInfoFragment).commit();
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_linear, cBoardInfoFragment).commit();
             }
         });
         //공모전 게시판 버튼
