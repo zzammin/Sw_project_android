@@ -205,7 +205,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"></TextView>
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="130dp"
         android:layout_marginLeft="14dp"
@@ -241,8 +241,16 @@
                 android:gravity="left|center">
             </androidx.appcompat.widget.AppCompatButton>
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="테스트용"
+                android:paddingLeft="13dp"
+                android:gravity="left|center">
+            </androidx.appcompat.widget.AppCompatButton>
+
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 
     <!--스터디 관리-->

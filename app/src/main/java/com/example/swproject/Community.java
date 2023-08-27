@@ -65,7 +65,7 @@ public class Community extends Fragment {
             @Override
             public void onClick(View view) {
                 Community_Board_Contest cBoardContestFragment = new Community_Board_Contest();
-                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fregment_linear, cBoardContestFragment).commit();
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_linear, cBoardContestFragment).commit();
             }
         });
         //hot 게시판 버튼
@@ -74,7 +74,7 @@ public class Community extends Fragment {
             @Override
             public void onClick(View view) {
                 Community_Board_Hot cBoardhotFragment = new Community_Board_Hot();
-                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fregment_linear, cBoardhotFragment).commit();
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_linear, cBoardhotFragment).commit();
             }
         });
         //뷰페이저

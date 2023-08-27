@@ -20,7 +20,7 @@ public class MypageCompletedChal extends Fragment {
             @Override
             public void onClick(View view) {
                 MyPage myPage = new MyPage();
-                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fregment_linear, myPage).commit();
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_linear, myPage).commit();
             }
         });
         return rootView;

@@ -42,7 +42,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--fragment 내용을 감싸는 Scroll-->
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/content_scroll"
         android:layout_width="match_parent"
         android:layout_height="560dp"
@@ -60,7 +60,7 @@
 
         </LinearLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <!--하단 탭-->
 
