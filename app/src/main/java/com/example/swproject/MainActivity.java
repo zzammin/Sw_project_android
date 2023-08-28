@@ -17,8 +17,11 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.swproject.ChooseChallenge;
 import com.google.android.material.navigation.NavigationBarView;
@@ -42,6 +45,13 @@ public class MainActivity extends AppCompatActivity implements FragmentChangeLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ImageButton settingBtn = (ImageButton)findViewById(R.id.settingBtn);
+        settingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "설정 버튼이 눌림", Toast.LENGTH_SHORT).show();
+            }
+        });
         // Fragment 모음
         home = new Home();
         ranking = new Ranking();
