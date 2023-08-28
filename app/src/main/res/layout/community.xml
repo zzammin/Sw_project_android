@@ -19,19 +19,23 @@
             android:background="@drawable/box_theme"
             android:text="즐겨찾기"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/appCompatButton5"
+            app:layout_constraintEnd_toStartOf="@+id/my_write"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"></androidx.appcompat.widget.AppCompatButton>
+            app:layout_constraintVertical_bias="0.0">
+
+        </androidx.appcompat.widget.AppCompatButton>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/appCompatButton5"
+            android:id="@+id/my_write"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:background="@drawable/box_theme"
             android:text="내가 쓴 글"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></androidx.appcompat.widget.AppCompatButton>
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.appcompat.widget.AppCompatButton>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--게시판-->
