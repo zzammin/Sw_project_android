@@ -62,61 +62,80 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <!--하단 탭-->
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_tab"
+    <!--하단 바-->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_gravity="bottom"
-        android:layout_marginEnd="0dp"
         android:layout_marginStart="0dp"
-        app:itemBackground="@color/material_dynamic_neutral80"
-        app:labelVisibilityMode="labeled"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/content_scroll"
-        app:menu="@menu/bottom_menu" />
+        android:layout_marginEnd="0dp"
+        android:background="@color/material_dynamic_neutral80">
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:background="@color/black">-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/home_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            android:backgroundTint="@color/material_dynamic_neutral80"
+            android:drawableTop="@drawable/home_resize"
+            android:gravity="center"
+            android:paddingTop="4dp"
+            android:text="메인화면"
+            android:textColor="@color/black" />
 
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/home_button"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_weight="1"/>-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ranking_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            android:backgroundTint="@color/material_dynamic_neutral80"
+            android:drawableTop="@drawable/ranking_resize"
+            android:gravity="center"
+            android:paddingTop="4dp"
+            android:text="랭킹"
+            android:textColor="@color/black" />
 
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/ranking_button"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_weight="1"/>-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/market_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            android:backgroundTint="@color/material_dynamic_neutral80"
+            android:drawableTop="@drawable/market_resize"
+            android:gravity="center"
+            android:paddingTop="4dp"
+            android:text="상점"
+            android:textColor="@color/black" />
 
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/market_button"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_weight="1"/>-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/community_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            android:backgroundTint="@color/material_dynamic_neutral80"
+            android:drawableTop="@drawable/community_resize"
+            android:gravity="center"
+            android:paddingTop="4dp"
+            android:text="커뮤니티"
+            android:textColor="@color/black" />
 
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/community_button"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_weight="1"/>-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mypage_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            android:backgroundTint="@color/material_dynamic_neutral80"
+            android:drawableTop="@drawable/mypage_resize"
+            android:gravity="center"
+            android:paddingTop="4dp"
+            android:text="내 정보"
+            android:textColor="@color/black" />
 
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/mypage_button"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_weight="1"/>-->
-<!--        -->
-<!--    </LinearLayout>-->
-
-
-
+    </LinearLayout>
 
 </LinearLayout>
