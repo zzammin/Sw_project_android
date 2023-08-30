@@ -6,6 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".Register">
 
+    <EditText
+        android:id="@+id/addName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="14dp"
+        android:ems="10"
+        android:hint="이름을 입력하세요"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addID" />
+
     <TextView
         android:id="@+id/textView64"
         android:layout_width="wrap_content"
@@ -24,12 +39,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="14dp"
         android:ems="10"
         android:hint="아이디를 입력하세요"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView62" />
 
@@ -68,12 +84,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="14dp"
         android:ems="10"
         android:hint="비밀번호를 입력하세요"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addID" />
+
+    <EditText
+        android:id="@+id/addAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginEnd="14dp"
+        android:ems="10"
+        android:hint="나이를 입력하세요"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addID" />
 
