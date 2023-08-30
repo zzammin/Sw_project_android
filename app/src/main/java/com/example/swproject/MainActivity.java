@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements FragmentChangeLis
         Button community_button = (Button) findViewById(R.id.community_button);
         Button mypage_button = (Button) findViewById(R.id.mypage_button);
 
-        // 초기 선택 상태를 설정
+        // 초기 버튼 선택 상태를 설정
         previousButton = home_button;
         previousButton.setTextColor(Color.parseColor("#0000FF"));
 

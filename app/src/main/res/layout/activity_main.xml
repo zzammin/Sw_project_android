@@ -82,7 +82,8 @@
             android:gravity="center"
             android:paddingTop="4dp"
             android:text="메인화면"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="13dp"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ranking_button"
@@ -95,7 +96,8 @@
             android:gravity="center"
             android:paddingTop="4dp"
             android:text="랭킹"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="13dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/market_button"
@@ -108,7 +110,8 @@
             android:gravity="center"
             android:paddingTop="4dp"
             android:text="상점"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="13dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/community_button"
@@ -121,7 +124,8 @@
             android:gravity="center"
             android:paddingTop="4dp"
             android:text="커뮤니티"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="13dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/mypage_button"
@@ -134,7 +138,8 @@
             android:gravity="center"
             android:paddingTop="4dp"
             android:text="내 정보"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="13dp" />
 
     </LinearLayout>
 

@@ -17,8 +17,7 @@
             android:id="@+id/profile_photo"
             android:layout_width="145dp"
             android:layout_height="145dp"
-            android:layout_marginStart="132dp"
-            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
             android:background="@drawable/circle_shape"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"></ImageView>

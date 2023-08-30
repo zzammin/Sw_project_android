@@ -116,6 +116,7 @@
                 android:layout_marginStart="3dp"
                 android:layout_marginBottom="7dp"
                 android:text="달성 보상 :"
+                android:textSize="14dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/today_challenge_image" />
 
@@ -125,7 +126,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
                 android:layout_marginBottom="7dp"
-                android:text="(포인트 수) Point!"
+                android:text="(포인트 수)"
+                android:textSize="14dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView6" />
 
@@ -134,7 +136,7 @@
                 android:layout_width="80dp"
                 android:layout_height="35dp"
                 android:layout_marginEnd="2dp"
-                android:layout_marginBottom="3dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/gray_shape"
                 android:text="인증하기"
                 android:textSize="11dp"
@@ -146,7 +148,7 @@
                 android:layout_width="80dp"
                 android:layout_height="35dp"
                 android:layout_marginEnd="2dp"
-                android:layout_marginBottom="3dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/gray_shape"
                 android:text="새로고침"
                 android:textSize="11dp"
@@ -162,6 +164,17 @@
                 android:text="남은 시간"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView62"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginBottom="7dp"
+                android:text="Point!"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView7" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
