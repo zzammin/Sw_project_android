@@ -1,5 +1,4 @@
 package com.example.swproject;
-package org.techtown.database;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,28 +6,29 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.swproject.ChallengeFragment1;
+import com.example.swproject.ChooseChallenge;
 import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 
-<<<<<<< Updated upstream
-public class MainActivity extends AppCompatActivity {
-=======
-
 public class MainActivity extends AppCompatActivity implements FragmentChangeListener{
->>>>>>> Stashed changes
     // fragment를 사용하려면 FragmentManager가 필요
     private FragmentManager fragmentManager = getSupportFragmentManager();
     // Fragment 클래스와 참조변수들
@@ -37,12 +37,21 @@ public class MainActivity extends AppCompatActivity implements FragmentChangeLis
     Market market;
     Community community;
     MyPage mypage;
+    MainChallenges mainChallenges = new MainChallenges();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ImageButton settingBtn = (ImageButton)findViewById(R.id.settingBtn);
+        settingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "설정 버튼이 눌림", Toast.LENGTH_SHORT).show();
+            }
+        });
         // Fragment 모음
         home = new Home();
         ranking = new Ranking();
@@ -50,41 +59,36 @@ public class MainActivity extends AppCompatActivity implements FragmentChangeLis
         community = new Community();
         mypage = new MyPage();
 
-        // fragment_linear (fragment가 들어갈 layout)에 fragment 추가
-        fragmentManager.beginTransaction().add(R.id.fragment_linear,home).commit();
-        fragmentManager.beginTransaction().add(R.id.fragment_linear,ranking).hide(ranking).commit();
-        fragmentManager.beginTransaction().add(R.id.fragment_linear,market).hide(market).commit();
-        fragmentManager.beginTransaction().add(R.id.fragment_linear,community).hide(community).commit();
-        fragmentManager.beginTransaction().add(R.id.fragment_linear,mypage).hide(mypage).commit();
+        fragmentManager.beginTransaction().replace(R.id.fragment_linear,home).commit();
 
         // 하단 바
         NavigationBarView navigationBarView = findViewById(R.id.bottom_tab);
-        navigationBarView.setOnItemReselectedListener(new NavigationBarView.OnItemReselectedListener() {
+        navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
-            public void onNavigationItemReselected(@NonNull MenuItem item) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int itemId = item.getItemId();
-                // 하단 바에서 선택하는 icon에 따라 show, hide 되는 fragment 변경
-                if (itemId == R.id.ranking) {
-                    fragmentManager.beginTransaction().show(ranking).hide(home).hide(market).hide(community).hide(mypage).commit();
-                } else if (itemId == R.id.market) {
-                    fragmentManager.beginTransaction().show(market).hide(home).hide(ranking).hide(community).hide(mypage).commit();
-                } else if (itemId == R.id.community) {
-                    fragmentManager.beginTransaction().show(community).hide(home).hide(ranking).hide(market).hide(mypage).commit();
-                } else if (itemId == R.id.mypage) {
-                    fragmentManager.beginTransaction().show(mypage).hide(home).hide(ranking).hide(market).hide(community).commit();
+                if (itemId == R.id.home && fragmentManager.findFragmentById(R.id.fragment_linear) != home) {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_linear, home).commit();
+                } else if (itemId == R.id.ranking && fragmentManager.findFragmentById(R.id.fragment_linear) != ranking) {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_linear, ranking).commit();
+                } else if (itemId == R.id.market && fragmentManager.findFragmentById(R.id.fragment_linear) != market) {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_linear, market).commit();
+                } else if (itemId == R.id.community && fragmentManager.findFragmentById(R.id.fragment_linear) != community) {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_linear, community).commit();
+                } else if (itemId == R.id.mypage && fragmentManager.findFragmentById(R.id.fragment_linear) != mypage) {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_linear, mypage).commit();
                 }
+                return true;
             }
         });
+    }
 
-        // Cake It! 로고 click 시 home 으로 돌아오기
-        TextView cake_it = (TextView) findViewById(R.id.Cake_it);
-        cake_it.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                fragmentManager.beginTransaction().show(home).hide(ranking).hide(market).hide(community).hide(mypage).commit();
-            }
-        });
-
+    @Override
+    public void onFragmentChange() {
+        // ChallengeFragment1에서 발생한 이벤트를 처리하는 메서드
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_linear, mainChallenges); // MainChallenges 프래그먼트로 변경
+        transaction.addToBackStack(null); // 백스택에 추가하여 뒤로가기 버튼으로 이전 상태 복원 가능하도록
+        transaction.commit();
     }
 }

@@ -15,15 +15,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SwProject"
         tools:targetApi="28">
-        <!--targetApi 이상의 API에서만 작동이 된다-->
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".LoginActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Register"
+            android:exported="false" /> <!-- targetApi 이상의 API에서만 작동이 된다 -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
         </activity>
     </application>
 

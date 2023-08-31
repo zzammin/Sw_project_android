@@ -2,37 +2,75 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <!--fragment를 감싸는 LinearLayout-->
     <LinearLayout
-        android:id="@+id/fregment_linear"
+        android:id="@+id/fragment_linear"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!--챌린지 목록-->
+        <FrameLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--챌린지 목록-->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/gray_shape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <!--챌린지 목록 위치(position)-->
+
+            <me.relex.circleindicator.CircleIndicator3
+                android:id="@+id/indicators"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                app:ci_drawable="@drawable/bg_indicator_active"
+                app:ci_drawable_unselected="@drawable/bg_indicator_inactive" />
+        </FrameLayout>
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/indicators"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="20dp"-->
+<!--            android:layout_marginBottom="60dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:orientation="horizontal"/>-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/challenge_position"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:textColor="@color/material_dynamic_neutral40"-->
+<!--            android:textSize="18dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent" />-->
+<!--            &lt;!&ndash;android:layout_gravity => 해당 뷰가 부모 컨테이너 내에서 어떻게 위치해야 하는지를 지정&ndash;&gt;-->
 
         <!--오늘의 챌린지!-->
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/pager"
-            android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/today_challenge_layout"
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="100dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="10dp"
+            android:background="@drawable/gray_shape"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/pager">
@@ -41,7 +79,7 @@
                 android:id="@+id/today_challenge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="6dp"
                 android:text="오늘의 챌린지!"
                 android:textColor="@color/black"
@@ -65,8 +103,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="3dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="3dp"
                 android:text="오늘의 챌린지 이름"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toTopOf="@+id/textView6"
                 app:layout_constraintStart_toEndOf="@+id/today_challenge_image" />
 
@@ -75,7 +114,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="3dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="7dp"
                 android:text="달성 보상 :"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/today_challenge_image" />
@@ -85,29 +124,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="7dp"
                 android:text="(포인트 수) Point!"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView6" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button1"
                 android:layout_width="80dp"
                 android:layout_height="35dp"
                 android:layout_marginEnd="2dp"
                 android:layout_marginBottom="3dp"
+                android:background="@drawable/gray_shape"
                 android:text="인증하기"
                 android:textSize="11dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/button2" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button2"
                 android:layout_width="80dp"
                 android:layout_height="35dp"
                 android:layout_marginEnd="2dp"
                 android:layout_marginBottom="3dp"
-                android:text="인증하기"
+                android:background="@drawable/gray_shape"
+                android:text="새로고침"
                 android:textSize="11dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
@@ -121,18 +162,18 @@
                 android:text="남은 시간"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         <!--여기에 전체 현황-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/total_current"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="350dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="10dp"
+            android:background="@drawable/gray_shape"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/today_challenge_layout">
@@ -141,11 +182,11 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="전체 현황"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="28dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -154,19 +195,20 @@
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="현재 진행중인 챌린지"
                 android:textColor="@color/material_dynamic_neutral_variant20"
+                android:textSize="18dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
             <TableLayout
                 android:id="@+id/tableLayout"
                 android:layout_width="377dp"
-                android:layout_height="139dp"
+                android:layout_height="150dp"
                 android:layout_marginStart="7dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="7dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -193,7 +235,7 @@
                 android:layout_width="377dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="7dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="7dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

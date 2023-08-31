@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_layout">
+
+    <ListView
+        android:id="@+id/challenge_list"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ListView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/core_challenge"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/gray_shape"
+        android:text="핵심 목표 설정"
+        android:textColor="@color/material_dynamic_neutral30"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/challenge_list" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/refresh"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/gray_shape"
+        android:text="새로고침"
+        android:textColor="@color/material_dynamic_neutral30"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/core_challenge"
+        app:layout_constraintTop_toBottomOf="@id/challenge_list" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
