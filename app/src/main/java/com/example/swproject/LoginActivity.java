@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
         RegisterButton.setOnClickListener(new View.OnClickListener() { //회원 가입 버튼 클릭
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),Register.class);
+                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(intent);
             }
         });
