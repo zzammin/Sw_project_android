@@ -39,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String userID = addID.getText().toString().trim();
                 String userPW2 = addPW2.getText().toString().trim();
                 String checkPW = checkPw.getText().toString();
-                String userName = addName.getText().toString();
+                String userName = addName.getText().toString().trim();
 
                 if (userID.isEmpty()||userPW2.isEmpty()||userName.isEmpty()){
                     Toast.makeText(getApplicationContext(), "회원정보를 제대로 입력해 주세요",Toast.LENGTH_LONG).show();
