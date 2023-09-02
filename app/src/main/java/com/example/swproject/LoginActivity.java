@@ -17,23 +17,21 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
-    private EditText addID, addPW;
-    private Button registerBtn_inLogin,loginBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        EditText addId= (EditText) findViewById(R.id.addID);
-        EditText addPw= (EditText) findViewById(R.id.checkPW);
+        EditText loginID= (EditText) findViewById(R.id.loginID);
+        EditText loginPW= (EditText) findViewById(R.id.loginPW);
         Button loginButton = (Button)findViewById(R.id.loginBtn);
         Button RegisterButton = (Button)findViewById(R.id.registerBtn_inLogin);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String userID = addId.getText().toString().trim();
-                String userPW = addPw.getText().toString().trim();
-                if (userID.isEmpty()||userPW.isEmpty()){
+                String userID = loginID.getText().toString().trim();
+                String userPass = loginPW.getText().toString().trim();
+                if (userID.isEmpty()||userPass.isEmpty()){
                     Toast.makeText(getApplicationContext(), "아이디와 패스워드를 입력해주세요",Toast.LENGTH_LONG).show();
                 }else {
                     Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -42,26 +40,26 @@ public class LoginActivity extends AppCompatActivity {
                             try {
                                 JSONObject jsonObject = new JSONObject(response);
                                 boolean success = jsonObject.getBoolean("success");
-                                if(success){ // 회원 가입 성공
-                                    String userId = jsonObject.getString("userId");
-                                    String userPass = jsonObject.getString("userPassword");
+                                if(success){ // 로그인 성공
+                                    String userID = jsonObject.getString("userID");
+                                    String userPW = jsonObject.getString("userPassword");
                                     Toast.makeText(getApplicationContext(), "로그인에 성공했습니다.", Toast.LENGTH_LONG).show();
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                    intent.putExtra("userId",userId);
-                                    intent.putExtra("userPass",userPass);
+                                    intent.putExtra("userID",userID);
+                                    intent.putExtra("userPW",userPW);
                                     startActivity(intent);
 
                                 }
-                                else{ // 회원 가입 실패
+                                else{ // 로그인 실패
                                     Toast.makeText(getApplicationContext(), "로그인에 실패했습니다.", Toast.LENGTH_LONG).show();
                                     return;
                                 }
                             } catch (JSONException e) {
-                                throw new RuntimeException(e);
+                                e.printStackTrace();
                             }
                         }
                     };
-                    LoginRequest loginRequest = new LoginRequest(userID,userPW,responseListener);
+                    LoginRequest loginRequest = new LoginRequest(userID,userPass,responseListener);
                     RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
                     queue.add(loginRequest);
                 }

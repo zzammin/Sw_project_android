@@ -27,10 +27,10 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         // 아이디 값 찾아주기
-        EditText addID = (EditText)findViewById(R.id.addID);
+        EditText addID = (EditText)findViewById(R.id.loginID);
         EditText addPW2 = (EditText)findViewById(R.id.addPW2);
         EditText addName = (EditText)findViewById(R.id.addName);
-        EditText checkPw = findViewById(R.id.checkPW);
+        EditText checkPw = findViewById(R.id.loginPW);
         registerBtn = findViewById(R.id.registerBtn);
         ImageButton backBtn = (ImageButton)findViewById(R.id.backBtn);
         registerBtn.setOnClickListener(new View.OnClickListener() {
