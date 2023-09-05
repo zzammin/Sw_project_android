@@ -58,7 +58,6 @@ public class RegisterActivity extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), "회원가입에 성공했습니다. 로그인 페이지로 이동합니다.", Toast.LENGTH_LONG).show();
                                     Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
                                     startActivity(intent);
-
                                 }
                                 else{ // 회원 가입 실패
                                     Toast.makeText(getApplicationContext(), "회원가입에 실패했습니다. 회원가입 페이지로 이동합니다.", Toast.LENGTH_LONG).show();
