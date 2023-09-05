@@ -6,10 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,41 +28,77 @@ public class MainChallenges extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        List<String> dataList = new ArrayList<>(); // 실제 데이터로 대체
-        ListAdapter adapter = new ListAdapter(dataList);
-        ListView listView = view.findViewById(R.id.challenge_list); // ListView의 ID로 대체
-        listView.setAdapter(adapter);
+        // RecyclerView 초기화 및 설정
+        RecyclerView recyclerView = view.findViewById(R.id.challenge_list);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(layoutManager);
 
+        List<ListItem> itemList = new ArrayList<>();
+
+        // 데이터 추가
+        itemList.add(new ListItem("challenge 1",   1));
+        itemList.add(new ListItem("challenge 2",   2));
+        itemList.add(new ListItem("challenge 3",   3));
+        itemList.add(new ListItem("challenge 4",   4));
+
+        // RecyclerView 어댑터 설정
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(itemList);
+        recyclerView.setAdapter(adapter);
     }
 
-    public class ListAdapter extends BaseAdapter{
-        private List<String> data;
-        private int maxItems = 4;
+    public class ListItem {
+        private String content;
+        private int number;
 
-        public ListAdapter(List<String> data){
-            this.data=data;
+        public ListItem(String content, int number) {
+            this.content = content;
+            this.number = number;
         }
+
+        public String getContent() {
+            return content;
+        }
+
+        public int getNumber() {
+            return number;
+        }
+    }
+
+    public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+        private List<ListItem> itemList;
+
+        public RecyclerViewAdapter(List<ListItem> itemList) {
+            this.itemList = itemList;
+        }
+
+        @NonNull
         @Override
-        public int getCount() {
-            // 어댑터의 getCount() 메서드를 통해 항목 수를 제한
-            return Math.min(data.size(), maxItems);
+        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.listview_challenge, parent, false);
+            return new ViewHolder(view);
         }
 
         @Override
-        public Object getItem(int position) {
-            return data.get(position);
+        public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position) {
+            ListItem currentItem = itemList.get(position);
+            holder.contentTextView.setText(currentItem.getContent());
+            holder.numberTextView.setText(String.valueOf(currentItem.getNumber()));
         }
 
         @Override
-        public long getItemId(int position) {
-            return position;
+        public int getItemCount() {
+            return itemList.size();
         }
 
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            // 항목 레이아웃을 인플레이트하고 data.get(position)에서 데이터를 채웁니다.
-            return convertView;
-        }
+        public class ViewHolder extends RecyclerView.ViewHolder {
+            TextView contentTextView;
+            TextView numberTextView;
 
+            public ViewHolder(View view) {
+                super(view);
+                contentTextView = view.findViewById(R.id.challenge_content);
+                numberTextView = view.findViewById(R.id.challenge_number);
+            }
+        }
     }
 }
