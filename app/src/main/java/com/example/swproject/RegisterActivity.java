@@ -37,13 +37,13 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String userID = addID.getText().toString().trim();
-                String userPW2 = addPW2.getText().toString().trim();
+                String userPW = addPW2.getText().toString().trim();
                 String checkPW = checkPw.getText().toString();
                 String userName = addName.getText().toString().trim();
 
-                if (userID.isEmpty()||userPW2.isEmpty()||userName.isEmpty()){
+                if (userID.isEmpty()||userPW.isEmpty()||userName.isEmpty()){
                     Toast.makeText(getApplicationContext(), "회원정보를 제대로 입력해 주세요",Toast.LENGTH_LONG).show();
-                }else if (!userPW2.equals(checkPW)){
+                }else if (!userPW.equals(checkPW)){
                     Toast.makeText(getApplicationContext(), "비밀번호가 서로 다릅니다", Toast.LENGTH_LONG).show();
                 }else{
 
@@ -70,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     };
 
-                    RegisterRequest registerRequest = new RegisterRequest(userID,userName,userPW2,responseListener);
+                    RegisterRequest registerRequest = new RegisterRequest(userID,userPW,userName,responseListener);
                     RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
                     queue.add(registerRequest);
                 }
