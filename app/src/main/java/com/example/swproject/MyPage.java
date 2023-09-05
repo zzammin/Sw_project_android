@@ -1,11 +1,15 @@
 package com.example.swproject;
 
+
+import static android.content.Intent.getIntent;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,11 +18,16 @@ import androidx.fragment.app.Fragment;
 public class MyPage extends Fragment {
 
 
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.mypage, container,false);
         Button button_1 = rootView.findViewById(R.id.button_1);
+        TextView tv_name = rootView.findViewById(R.id.mypage_username);
+        String userName = this.getArguments().getString("userName");
+        tv_name.setText(userName);
         button_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

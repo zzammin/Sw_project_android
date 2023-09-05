@@ -1,6 +1,7 @@
 package com.example.swproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,8 +18,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
+    private FragmentManager fragmentManager = getSupportFragmentManager();
+    MyPage mypage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mypage = new MyPage();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -41,13 +45,17 @@ public class LoginActivity extends AppCompatActivity {
                                 JSONObject jsonObject = new JSONObject(response);
                                 boolean success = jsonObject.getBoolean("success");
                                 if(success){ // 로그인 성공
+                                    Toast.makeText(getApplicationContext(), "로그인에 성공했습니다.", Toast.LENGTH_LONG).show();
                                     String userID = jsonObject.getString("userID");
                                     String userPW = jsonObject.getString("userPassword");
-                                    Toast.makeText(getApplicationContext(), "로그인에 성공했습니다.", Toast.LENGTH_LONG).show();
+                                    String userName = jsonObject.getString("userName");
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     intent.putExtra("userID",userID);
                                     intent.putExtra("userPW",userPW);
                                     startActivity(intent);
+                                    Bundle bundle = new Bundle();
+                                    bundle.putString("userName",userName);
+                                    mypage.setArguments(bundle);
 
                                 }
                                 else{ // 로그인 실패
