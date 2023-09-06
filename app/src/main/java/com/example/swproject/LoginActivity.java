@@ -61,6 +61,10 @@ public class LoginActivity extends AppCompatActivity {
                                     bundle.putString("userName",userName);
                                     mypage.setArguments(bundle);
 
+                                    // MyPage 프래그먼트를 추가하고 트랜잭션을 커밋합니다.
+                                    FragmentTransaction transaction = fragmentManager.beginTransaction();
+                                    transaction.replace(R.id.mypage_name, mypage);
+                                    transaction.commit();
 
 
                                 }
