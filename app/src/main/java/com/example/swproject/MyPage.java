@@ -26,7 +26,8 @@ public class MyPage extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.mypage, container,false);
         Button button_1 = rootView.findViewById(R.id.button_1);
         TextView tv_name = rootView.findViewById(R.id.mypage_username);
-        String userName = this.getArguments().getString("userName");
+        Bundle bundle = getArguments();
+        String userName = this.getArguments() != null ? this.getArguments().getString("userName") : "";
         tv_name.setText(userName);
         button_1.setOnClickListener(new View.OnClickListener() {
             @Override

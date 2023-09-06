@@ -2,6 +2,7 @@ package com.example.swproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -45,17 +46,22 @@ public class LoginActivity extends AppCompatActivity {
                                 JSONObject jsonObject = new JSONObject(response);
                                 boolean success = jsonObject.getBoolean("success");
                                 if(success){ // 로그인 성공
-                                    Toast.makeText(getApplicationContext(), "로그인에 성공했습니다.", Toast.LENGTH_LONG).show();
+
                                     String userID = jsonObject.getString("userID");
                                     String userPW = jsonObject.getString("userPassword");
                                     String userName = jsonObject.getString("userName");
+                                    Toast.makeText(getApplicationContext(), userName+"님 환영합니다!", Toast.LENGTH_LONG).show();
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     intent.putExtra("userID",userID);
                                     intent.putExtra("userPW",userPW);
                                     startActivity(intent);
+
+                                    //mypage에 정보전달
                                     Bundle bundle = new Bundle();
                                     bundle.putString("userName",userName);
                                     mypage.setArguments(bundle);
+
+
 
                                 }
                                 else{ // 로그인 실패
