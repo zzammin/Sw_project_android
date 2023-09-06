@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="28">
         <activity
+            android:name=".show_challenge"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
@@ -29,7 +32,7 @@
             android:exported="false" /> <!-- targetApi 이상의 API에서만 작동이 된다 -->
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>
