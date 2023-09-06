@@ -61,6 +61,25 @@ public class Community_Board_Hot extends Fragment {
         recyclerView.setAdapter(adapter);
     }
 
+    private void changeFragmentWithData(String title, String content, String userid, int number) {
+        // 데이터를 담은 Bundle 생성
+        Bundle bundle = new Bundle();
+        bundle.putString("post1", title);
+        bundle.putString("post2", content);
+        bundle.putString("post3", userid);
+        //bundle.putInt("number", number);
+
+        // Fragment 인스턴스 생성 및 Bundle 전달
+        Post_hot post_hot = new Post_hot();
+        post_hot.setArguments(bundle);
+
+        // Fragment 변경
+        requireActivity().getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_linear, post_hot)
+                .addToBackStack(null)
+                .commit();
+    }
+
     public class ListItem {
         private String title;
         private String content;
@@ -93,10 +112,12 @@ public class Community_Board_Hot extends Fragment {
 
     public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
         private List<ListItem> itemList;
+        ListItem currentItem;
 
         public RecyclerViewAdapter(List<ListItem> itemList) {
             this.itemList = itemList;
         }
+
 
         @NonNull
         @Override
@@ -106,12 +127,27 @@ public class Community_Board_Hot extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position) {
-            ListItem currentItem = itemList.get(position);
+        public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+            final int itemPosition = position;
+            currentItem = itemList.get(itemPosition);
             holder.titleTextView.setText(currentItem.getTitle());
             holder.contentTextView.setText(currentItem.getContent());
             holder.useridTextView.setText(currentItem.getUserId());
             holder.numberTextView.setText(String.valueOf(currentItem.getNumber()));
+
+            // RecyclerView item의 Click 이벤트
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    currentItem = itemList.get(itemPosition);
+                    String title = currentItem.getTitle();
+                    String content = currentItem.getContent();
+                    String userid = currentItem.getUserId();
+                    int number = currentItem.getNumber();
+                    changeFragmentWithData(title, content, userid, number);
+                }
+            });
+
         }
 
         @Override
@@ -135,3 +171,4 @@ public class Community_Board_Hot extends Fragment {
         }
     }
 }
+

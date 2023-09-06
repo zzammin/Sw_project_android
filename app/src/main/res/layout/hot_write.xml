@@ -36,29 +36,33 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <EditText
-        android:id="@+id/hot_title"
-        android:layout_width="350dp"
+        android:id="@+id/free_title"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:inputType="text"
-        android:hint="제목을 입력하세요"
         android:layout_marginTop="20dp"
-        android:privateImeOptions="defaultInputmode=korean"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="제목을 입력하세요"
+        android:inputType="text"
+        android:privateImeOptions="defaultInputmode=korean" />
 
     <EditText
-        android:id="@+id/hot_context"
-        android:layout_width="350dp"
-        android:layout_height="600dp"
+        android:id="@+id/free_context"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         android:layout_gravity="center"
-        android:gravity="top"
-        android:background="@null"
-        android:inputType="textMultiLine"
-        android:scrollHorizontally="false"
-        android:hint="내용을 입력하세요"
         android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@null"
+        android:gravity="top"
+        android:hint="내용을 입력하세요"
+        android:inputType="textMultiLine"
+        android:privateImeOptions="defaultInputmode=korean"
+        android:scrollHorizontally="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:privateImeOptions="defaultInputmode=korean" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="100dp"

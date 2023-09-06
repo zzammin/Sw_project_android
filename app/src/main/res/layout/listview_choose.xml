@@ -8,7 +8,7 @@
     android:layout_marginRight="10dp"
     android:layout_marginBottom="10dp"
     android:background="@drawable/gray_shape"
-    android:backgroundTint="@android:color/system_accent1_100">
+    android:backgroundTint="@color/material_dynamic_neutral_variant90">
 
         <TextView
             android:id="@+id/choose_challenge"
