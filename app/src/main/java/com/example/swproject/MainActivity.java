@@ -11,6 +11,7 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -59,7 +60,18 @@ public class MainActivity extends AppCompatActivity implements FragmentChangeLis
         community = new Community();
         mypage = new MyPage();
 
+
+        //재민아 여기야,,,여기가 LoginActivity에서 userName 받고 다시 mypage 프래그먼트로 전달하는 곳이야
+        Intent intent = getIntent();
+        String userName = intent.getStringExtra("userName");
+        //mypage에 정보전달
+        Bundle bundle = new Bundle();
+        bundle.putString("userName",userName);
+        mypage.setArguments(bundle);
+        Log.d("LoginActivity", "userName: " + userName);
         fragmentManager.beginTransaction().replace(R.id.fragment_linear,home).commit();
+        //여기까지야,,
+
 
         // 하단 바
         NavigationBarView navigationBarView = findViewById(R.id.bottom_tab);
