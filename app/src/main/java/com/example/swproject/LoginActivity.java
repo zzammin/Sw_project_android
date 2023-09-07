@@ -20,10 +20,8 @@ import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
     private FragmentManager fragmentManager = getSupportFragmentManager();
-    MyPage mypage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        mypage = new MyPage();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -56,16 +54,27 @@ public class LoginActivity extends AppCompatActivity {
                                     intent.putExtra("userPW",userPW);
                                     startActivity(intent);
 
+//                                    Bundle bundle = new Bundle();
+//                                    bundle.putString("post1", title);
+//                                    bundle.putString("post2", content);
+//                                    bundle.putString("post3", userid);
+//                                    //bundle.putInt("number", number);
+//
+//                                    // Fragment 인스턴스 생성 및 Bundle 전달
+//                                    Post_free post_free = new Post_free();
+//                                    post_free.setArguments(bundle);
+
                                     //mypage에 정보전달
                                     Bundle bundle = new Bundle();
-                                    bundle.putString("userName",userName);
+                                    bundle.putString("username",userName);
+
+                                    MyPage mypage = new MyPage();
                                     mypage.setArguments(bundle);
 
-                                    // MyPage 프래그먼트를 추가하고 트랜잭션을 커밋합니다.
-                                    FragmentTransaction transaction = fragmentManager.beginTransaction();
-                                    transaction.replace(R.id.mypage_name, mypage);
-                                    transaction.commit();
-
+                                    fragmentManager.beginTransaction()
+                                            .replace(R.id.mypage_username, mypage)
+                                            .addToBackStack(null)
+                                            .commit();
 
                                 }
                                 else{ // 로그인 실패

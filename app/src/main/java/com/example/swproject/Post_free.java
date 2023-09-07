@@ -27,7 +27,6 @@ public class Post_free extends Fragment {
         Bundle args = getArguments();
         if (args != null) {
             String title = args.getString("post1");
-            Log.d("title",":"+title);
             String content = args.getString("post2");
             String userid = args.getString("post3");
             // int number = args.getInt("number");
