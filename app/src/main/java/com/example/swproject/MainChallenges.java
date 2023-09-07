@@ -32,19 +32,19 @@ public class MainChallenges extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-        /*List<String> dataList = new ArrayList<>(); // 실제 데이터로 대체
-        //ListAdapter adapter = new ListAdapter(dataList);
-        //ListView listView = view.findViewById(R.id.challenge_list); // ListView의 ID로 대체
-        //listView.setAdapter(adapter);
-        //data = view.findViewById(R.id.data);
-        //data.setOnClickListener(new View.OnClickListener() {
+        data = view.findViewById(R.id.data);
+        data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(),show_challenge.class);
                 startActivity(intent);
             }
-        });*/
+        });
+        /*List<String> dataList = new ArrayList<>(); // 실제 데이터로 대체
+        //ListAdapter adapter = new ListAdapter(dataList);
+        //ListView listView = view.findViewById(R.id.challenge_list); // ListView의 ID로 대체
+        //listView.setAdapter(adapter);
+        */
 
         // RecyclerView 초기화 및 설정
         RecyclerView recyclerView = view.findViewById(R.id.challenge_list);
