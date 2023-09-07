@@ -1,10 +1,11 @@
 package com.example.swproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,8 +19,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
+    private FragmentManager fragmentManager = getSupportFragmentManager();
+    MyPage mypage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mypage = new MyPage();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -42,16 +46,25 @@ public class LoginActivity extends AppCompatActivity {
                                 JSONObject jsonObject = new JSONObject(response);
                                 boolean success = jsonObject.getBoolean("success");
                                 if(success){ // 로그인 성공
+
                                     String userID = jsonObject.getString("userID");
                                     String userPW = jsonObject.getString("userPassword");
-                                    Toast.makeText(getApplicationContext(), "로그인에 성공했습니다.", Toast.LENGTH_LONG).show();
                                     String userName = jsonObject.getString("userName");
                                     Toast.makeText(getApplicationContext(), userName+"님 환영합니다!", Toast.LENGTH_LONG).show();
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     intent.putExtra("userID",userID);
                                     intent.putExtra("userPW",userPW);
-                                    intent.putExtra("userName",userName);
                                     startActivity(intent);
+
+                                    //mypage에 정보전달
+                                    Bundle bundle = new Bundle();
+                                    bundle.putString("userName",userName);
+                                    mypage.setArguments(bundle);
+
+                                    // MyPage 프래그먼트를 추가하고 트랜잭션을 커밋합니다.
+                                    FragmentTransaction transaction = fragmentManager.beginTransaction();
+                                    transaction.replace(R.id.mypage_name, mypage);
+                                    transaction.commit();
 
 
                                 }
