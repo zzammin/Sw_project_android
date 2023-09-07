@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +22,9 @@ import java.util.List;
 
 public class MainChallenges extends Fragment {
     private Button data;
+
+
+    RecyclerViewAdapter adapter;
 
     @Nullable
     @Override
@@ -61,7 +65,7 @@ public class MainChallenges extends Fragment {
         itemList.add(new ListItem("challenge 4",   4));
 
         // RecyclerView 어댑터 설정
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(itemList);
+        adapter = new RecyclerViewAdapter(itemList);
         recyclerView.setAdapter(adapter);
     }
 
@@ -102,6 +106,16 @@ public class MainChallenges extends Fragment {
             ListItem currentItem = itemList.get(position);
             holder.contentTextView.setText(currentItem.getContent());
             holder.numberTextView.setText(String.valueOf(currentItem.getNumber()));
+            holder.clear.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(view.getContext(),"챌린지 성공!",Toast.LENGTH_LONG).show();
+                    // 항목 삭제
+                    int removedPosition = itemList.indexOf(currentItem);
+                    itemList.remove(currentItem);
+                    adapter.notifyItemRemoved(removedPosition);
+                }
+            });
         }
 
         @Override
@@ -112,11 +126,13 @@ public class MainChallenges extends Fragment {
         public class ViewHolder extends RecyclerView.ViewHolder {
             TextView contentTextView;
             TextView numberTextView;
+            Button clear;
 
             public ViewHolder(View view) {
                 super(view);
                 contentTextView = view.findViewById(R.id.challenge_content);
                 numberTextView = view.findViewById(R.id.challenge_number);
+                clear = view.findViewById(R.id.clear_button);
             }
         }
     }

@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements FragmentChangeLis
                 Toast.makeText(MainActivity.this, "설정 버튼이 눌림", Toast.LENGTH_SHORT).show();
             }
         });
-        // Fragment 모음
+        // Fragment 모음입니다
         home = new Home();
         ranking = new Ranking();
         market = new Market();
