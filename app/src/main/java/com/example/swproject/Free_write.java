@@ -36,6 +36,8 @@ public class Free_write extends Fragment {
             }
         });
 
+
+
         Button completeButton = view.findViewById(R.id.complete_button);
         completeButton.setOnClickListener(new View.OnClickListener() {
             @Override
