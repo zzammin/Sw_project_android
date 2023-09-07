@@ -56,28 +56,21 @@ public class Free_write extends Fragment {
                 int size = communityBoardFree.itemList.size();
                 int number = size + 1;
 
-                Bundle bundle = new Bundle();
-                bundle.putString("post1", title); // 추출된 제목을 번들에 넣음
-                bundle.putString("post2", content); // 추출된 내용을 번들에 넣음
-                bundle.putString("post3", userId); // 추출된 사용자 ID를 번들에 넣음
-                bundle.putInt("post4",number); // 추출된 게시글 number를 번들에 넣음
+                // 새로운 게시물을 Community_Board_Free로 전달
+                sendDataToCommunityBoardFree(title, content, userId, number); // 0은 새 게시물 번호를 의미합니다.
 
-                // getArguments() 메서드로 현재 프래그먼트의 번들을 가져와서 수정
-                Bundle currentFragmentArgs = getArguments();
-                if (currentFragmentArgs == null) {
-                    currentFragmentArgs = new Bundle();
-                }
-                currentFragmentArgs.putAll(bundle);
-
-                // 현재 프래그먼트에 번들 설정
-                setArguments(currentFragmentArgs);
-
-                // Community_Board_Free 프래그먼트로 이동
-                requireActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_linear, communityBoardFree)
-                        .commit();
             }
         });
 
+    }
+
+    public void sendDataToCommunityBoardFree(String title, String content, String userId, int number) {
+        communityBoardFree.setData(title, content, userId, number);
+
+        // Community_Board_Free 프래그먼트로 이동
+        requireActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_linear, communityBoardFree)
+                .commit();
     }
 }
