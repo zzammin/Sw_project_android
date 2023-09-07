@@ -40,33 +40,35 @@ public class Free_write extends Fragment {
         completeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // EditText에서 입력된 값을 가져옴
-                EditText titleEditText = getView().findViewById(R.id.free_title);
-                EditText contentEditText = getView().findViewById(R.id.free_context);
-                TextView userId = getView().findViewById(R.id.free_userid);
-                String title = titleEditText.getText().toString();
-                String content = contentEditText.getText().toString();
-                String userid = userId.getText().toString();
-                Log.d("title",":"+title);
-                Log.d("title",":"+content);
-                Log.d("title",":"+userid);
 
-                // 새로운 ListItem 생성하고 데이터 설정
-                if (communityBoardFree.itemList != null) {
-                    int size = communityBoardFree.itemList.size();
-                    int number = size + 1;
+                EditText titleEditText = (EditText) view.findViewById(R.id.free_title);
+                Log.d("title",":"+titleEditText);
+                EditText contentEditText = (EditText) view.findViewById(R.id.free_context);
+                TextView userIdTextView = (TextView) view.findViewById(R.id.free_userid);
 
-                    Community_Board_Free.ListItem listItem = communityBoardFree.new ListItem(title, content, userid, number);
+                String title = titleEditText.getText().toString(); // EditText에서 텍스트 추출
+                Log.d("title1",":"+title);
+                String content = contentEditText.getText().toString(); // EditText에서 텍스트 추출
+                String userId = userIdTextView.getText().toString(); // TextView에서 텍스트 추출
 
-                    // itemList에 추가
-                    communityBoardFree.itemList.add(listItem);
-                }else{
-                    int number = 0;
-                    Community_Board_Free.ListItem listItem = communityBoardFree.new ListItem(title, content, userid, number);
+                int size = communityBoardFree.itemList.size();
+                int number = size + 1;
 
-                    // itemList에 추가
-                    communityBoardFree.itemList.add(listItem);
+                Bundle bundle = new Bundle();
+                bundle.putString("post1", title); // 추출된 제목을 번들에 넣음
+                bundle.putString("post2", content); // 추출된 내용을 번들에 넣음
+                bundle.putString("post3", userId); // 추출된 사용자 ID를 번들에 넣음
+                bundle.putInt("post4",number); // 추출된 게시글 number를 번들에 넣음
+
+                // getArguments() 메서드로 현재 프래그먼트의 번들을 가져와서 수정
+                Bundle currentFragmentArgs = getArguments();
+                if (currentFragmentArgs == null) {
+                    currentFragmentArgs = new Bundle();
                 }
+                currentFragmentArgs.putAll(bundle);
+
+                // 현재 프래그먼트에 번들 설정
+                setArguments(currentFragmentArgs);
 
                 // Community_Board_Free 프래그먼트로 이동
                 requireActivity().getSupportFragmentManager().beginTransaction()

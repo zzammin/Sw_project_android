@@ -70,12 +70,23 @@ public class Community_Board_Free extends Fragment {
 
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(itemList);
 
+        Bundle args = getArguments();
+        if (args != null) {
+            // 번들에서 데이터 추출
+            String title = args.getString("post1");
+            String content = args.getString("post2");
+            String userid = args.getString("post3");
+            int number = args.getInt("post4");
+
+            // 데이터 추가
+            itemList.add(new ListItem(title, content, userid, number));
+            adapter.notifyDataSetChanged();
+        }
+
         // 데이터 추가
         itemList.add(new ListItem("Title 1", "Content 1", "zzam", 1));
         itemList.add(new ListItem("Title 2", "Content 2", "yeon", 2));
         itemList.add(new ListItem("Title 3", "Content 3", "soo", 3));
-        itemList.add(new ListItem(title,content,userid,number));
-        adapter.notifyDataSetChanged();
 
         recyclerView.setAdapter(adapter);
 
