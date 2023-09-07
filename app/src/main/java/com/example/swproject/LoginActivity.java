@@ -1,11 +1,10 @@
 package com.example.swproject;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,7 +18,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
-    private FragmentManager fragmentManager = getSupportFragmentManager();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,37 +42,17 @@ public class LoginActivity extends AppCompatActivity {
                                 JSONObject jsonObject = new JSONObject(response);
                                 boolean success = jsonObject.getBoolean("success");
                                 if(success){ // 로그인 성공
-
                                     String userID = jsonObject.getString("userID");
                                     String userPW = jsonObject.getString("userPassword");
+                                    Toast.makeText(getApplicationContext(), "로그인에 성공했습니다.", Toast.LENGTH_LONG).show();
                                     String userName = jsonObject.getString("userName");
                                     Toast.makeText(getApplicationContext(), userName+"님 환영합니다!", Toast.LENGTH_LONG).show();
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     intent.putExtra("userID",userID);
                                     intent.putExtra("userPW",userPW);
+                                    intent.putExtra("userName",userName);
                                     startActivity(intent);
 
-//                                    Bundle bundle = new Bundle();
-//                                    bundle.putString("post1", title);
-//                                    bundle.putString("post2", content);
-//                                    bundle.putString("post3", userid);
-//                                    //bundle.putInt("number", number);
-//
-//                                    // Fragment 인스턴스 생성 및 Bundle 전달
-//                                    Post_free post_free = new Post_free();
-//                                    post_free.setArguments(bundle);
-
-                                    //mypage에 정보전달
-                                    Bundle bundle = new Bundle();
-                                    bundle.putString("username",userName);
-
-                                    MyPage mypage = new MyPage();
-                                    mypage.setArguments(bundle);
-
-                                    fragmentManager.beginTransaction()
-                                            .replace(R.id.mypage_username, mypage)
-                                            .addToBackStack(null)
-                                            .commit();
 
                                 }
                                 else{ // 로그인 실패
