@@ -428,7 +428,7 @@
                     android:background="@drawable/box_theme"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0"></ImageView>
@@ -535,12 +535,11 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView40"></TextView>
 
                 <TextView
-                    android:id="@+id/textView41"
+                    android:id="@+id/ranking_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:layout_marginTop="10dp"
-                    android:text="Jimin"
                     android:textColor="@color/black"
                     android:textSize="15dp"
                     android:textStyle="bold"
@@ -559,7 +558,7 @@
                     android:textSize="17dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/imageView19"
-                    app:layout_constraintTop_toBottomOf="@+id/textView41" />
+                    app:layout_constraintTop_toBottomOf="@+id/ranking_name" />
 
                 <TextView
                     android:layout_width="wrap_content"

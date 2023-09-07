@@ -67,15 +67,18 @@ public class MainActivity extends AppCompatActivity implements FragmentChangeLis
         //재민아 여기야,,,여기가 LoginActivity에서 userName 받고 다시 mypage 프래그먼트로 전달하는 곳이야
         Intent intent = getIntent();
         String userName = intent.getStringExtra("userName");
-        //mypage에 정보전달
+        //프래그먼트에 정보전달
         Bundle bundle = new Bundle();
         bundle.putString("userName",userName);
         mypage.setArguments(bundle);
+        Bundle bundle_ranking = new Bundle();
+        bundle_ranking.putString("userName",userName);
+        ranking.setArguments(bundle_ranking);
         Log.d("LoginActivity", "userName: " + userName);
-        fragmentManager.beginTransaction().replace(R.id.fragment_linear,home).commit();
         //여기까지야,,
 
 
+        fragmentManager.beginTransaction().replace(R.id.fragment_linear,home).commit();
         // 하단 바 버튼들
         Button home_button = (Button) findViewById(R.id.home_button);
         Button ranking_button = (Button) findViewById(R.id.ranking_button);
