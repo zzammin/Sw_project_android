@@ -25,6 +25,6 @@ public class Ranking extends Fragment{
         // userName을 TextView에 설정
         tv_name.setText(userName);
 
-        return inflater.inflate(R.layout.ranking,container,false);
+        return rootView;
     }
 }
