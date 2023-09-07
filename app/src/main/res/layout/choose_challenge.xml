@@ -69,7 +69,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.547" />
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/challenge_recyclerview"
         android:layout_width="371dp"
         android:layout_height="110dp"
         android:layout_marginStart="22dp"

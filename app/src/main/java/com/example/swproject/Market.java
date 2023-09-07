@@ -40,7 +40,6 @@ public class Market extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        // !!!!!!!!!!! 다른 프래그먼트 갔다가 market 프래그먼트 오면 뷰페이저들이 없어지는 문제 !!!!!!!!!!!!!!!
 
         //오늘의 할인 부분 뷰페이저
         marketSalePager = (ViewPager2)view.findViewById(R.id.Today_Sale_pager);

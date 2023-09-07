@@ -18,22 +18,24 @@
             android:layout_marginRight="14dp">
 
             <ImageView
-                android:id="@+id/imageView17"
+                android:id="@+id/ranking_layout"
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
                 android:background="@drawable/box_theme"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"></ImageView>
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"></ImageView>
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/ranking_123"
                 android:layout_width="280dp"
                 android:layout_height="240dp"
                 android:layout_marginBottom="5dp"
                 android:background="@drawable/ranking_123"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView17"
+                app:layout_constraintBottom_toBottomOf="@+id/ranking_layout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -44,7 +46,7 @@
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="14dp"
                 android:background="@drawable/trophy"
-                app:layout_constraintStart_toStartOf="@+id/imageView17"
+                app:layout_constraintStart_toStartOf="@+id/ranking_layout"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -63,113 +65,113 @@
                 android:id="@+id/first"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="83dp"
+                android:layout_marginTop="4dp"
                 android:text="1"
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView" />
+                app:layout_constraintEnd_toEndOf="@+id/ranking_123"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/ranking_123"
+                app:layout_constraintTop_toBottomOf="@id/first_image" />
 
             <TextView
                 android:id="@+id/second"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="135dp"
+                android:layout_marginTop="4dp"
                 android:text="2"
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.697"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView" />
+                app:layout_constraintEnd_toEndOf="@+id/ranking_123"
+                app:layout_constraintHorizontal_bias="0.776"
+                app:layout_constraintStart_toStartOf="@+id/ranking_123"
+                app:layout_constraintTop_toBottomOf="@id/second_image" />
 
             <TextView
                 android:id="@+id/third"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="163dp"
+                android:layout_marginTop="4dp"
                 android:text="3"
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.306"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView" />
+                app:layout_constraintEnd_toEndOf="@+id/ranking_123"
+                app:layout_constraintHorizontal_bias="0.23"
+                app:layout_constraintStart_toStartOf="@+id/ranking_123"
+                app:layout_constraintTop_toBottomOf="@+id/third_image" />
 
             <ImageView
                 android:id="@+id/first_image"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="43dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView"
+                app:layout_constraintEnd_toEndOf="@+id/ranking_123"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/ranking_123"
+                app:layout_constraintTop_toTopOf="@+id/ranking_123"
                 app:srcCompat="@drawable/ranking" />
 
             <ImageView
-                android:id="@+id/imageView31"
+                android:id="@+id/second_image"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="95dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.712"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView"
+                android:layout_marginTop="96dp"
+                app:layout_constraintEnd_toEndOf="@+id/ranking_123"
+                app:layout_constraintHorizontal_bias="0.805"
+                app:layout_constraintStart_toStartOf="@+id/ranking_123"
+                app:layout_constraintTop_toTopOf="@+id/ranking_123"
                 app:srcCompat="@drawable/second_image" />
 
             <ImageView
-                android:id="@+id/imageView32"
+                android:id="@+id/third_image"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="128dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.294"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView"
+                app:layout_constraintEnd_toEndOf="@id/ranking_123"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintStart_toStartOf="@id/ranking_123"
+                app:layout_constraintTop_toTopOf="@id/ranking_123"
                 app:srcCompat="@drawable/third_image" />
 
             <TextView
                 android:id="@+id/first_nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="4dp"
                 android:text="1등 닉네임"
                 android:textColor="@color/black"
                 android:textSize="14dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/ranking_123"
+                app:layout_constraintStart_toStartOf="@+id/ranking_123"
                 app:layout_constraintTop_toBottomOf="@id/ranking_first_profile" />
 
             <TextView
                 android:id="@+id/second_nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="4dp"
                 android:text="2등 닉네임"
                 android:textColor="@color/black"
                 android:textSize="14dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.743"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/ranking_123"
+                app:layout_constraintHorizontal_bias="0.87"
+                app:layout_constraintStart_toStartOf="@+id/ranking_123"
                 app:layout_constraintTop_toBottomOf="@id/ranking_second_profile" />
 
             <TextView
                 android:id="@+id/third_nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="4dp"
                 android:text="3등 닉네임"
                 android:textColor="@color/black"
                 android:textSize="14dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.257"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/ranking_123"
+                app:layout_constraintHorizontal_bias="0.133"
+                app:layout_constraintStart_toStartOf="@+id/ranking_123"
                 app:layout_constraintTop_toBottomOf="@id/ranking_third_profile" />
 
             <TextView
@@ -209,10 +211,10 @@
                 android:id="@+id/ranking_first_profile"
                 android:layout_width="70dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="58dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="56dp"
+                app:layout_constraintEnd_toEndOf="@+id/ranking_123"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/ranking_123"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/box_theme" />
 
@@ -221,9 +223,9 @@
                 android:layout_width="70dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="110dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.753"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/ranking_123"
+                app:layout_constraintHorizontal_bias="0.88"
+                app:layout_constraintStart_toStartOf="@+id/ranking_123"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/box_theme" />
 
@@ -231,10 +233,10 @@
                 android:id="@+id/ranking_third_profile"
                 android:layout_width="70dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="145dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.248"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="143dp"
+                app:layout_constraintEnd_toEndOf="@+id/ranking_123"
+                app:layout_constraintHorizontal_bias="0.125"
+                app:layout_constraintStart_toStartOf="@+id/ranking_123"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/box_theme" />
 
@@ -242,26 +244,29 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="50dp">
 
             <!--전체순위-->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="14dp">
 
                 <ImageView
                     android:id="@+id/scrollView19"
-                    android:layout_width="180dp"
-                    android:layout_height="300dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:background="@drawable/box_theme"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"></ImageView>
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </ImageView>
 
                 <TextView
                     android:id="@+id/textView35"
@@ -274,129 +279,135 @@
                     android:textSize="20dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/scrollView19"
-                    app:layout_constraintTop_toTopOf="@+id/scrollView19"></TextView>
+                    app:layout_constraintTop_toTopOf="@+id/scrollView19">
 
+                </TextView>
+
+                <!-- 1위~10위 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="240dp"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="5dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="50dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="10dp"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView35">
+                    android:orientation="vertical">
 
-                    <ScrollView
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent">
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        app:layout_constraintTop_toBottomOf="@+id/textView35">
+
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <TextView
-                                android:layout_width="150dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/box_theme"
+                                android:gravity="center"
                                 android:text="1"
                                 android:textColor="@color/black"
-                                android:gravity="center"
-                                android:background="@drawable/box_theme"
-                                android:layout_marginBottom="10dp"></TextView>
+                                android:textSize="20dp"></TextView>
+
                             <TextView
-                                android:layout_width="150dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/box_theme"
+                                android:gravity="center"
                                 android:text="2"
                                 android:textColor="@color/black"
-                                android:gravity="center"
-                                android:background="@drawable/box_theme"
-                                android:layout_marginBottom="10dp"></TextView>
+                                android:textSize="20dp"></TextView>
+
                             <TextView
-                                android:layout_width="150dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/box_theme"
+                                android:gravity="center"
                                 android:text="3"
                                 android:textColor="@color/black"
-                                android:gravity="center"
-                                android:background="@drawable/box_theme"
-                                android:layout_marginBottom="10dp"></TextView>
+                                android:textSize="20dp"></TextView>
+
                             <TextView
-                                android:layout_width="150dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/box_theme"
+                                android:gravity="center"
                                 android:text="4"
                                 android:textColor="@color/black"
-                                android:gravity="center"
-                                android:background="@drawable/box_theme"
-                                android:layout_marginBottom="10dp"></TextView>
+                                android:textSize="20dp"></TextView>
+
                             <TextView
-                                android:layout_width="150dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/box_theme"
+                                android:gravity="center"
                                 android:text="5"
                                 android:textColor="@color/black"
-                                android:gravity="center"
-                                android:background="@drawable/box_theme"
-                                android:layout_marginBottom="10dp"></TextView>
+                                android:textSize="20dp"></TextView>
+
                             <TextView
-                                android:layout_width="150dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/box_theme"
+                                android:gravity="center"
                                 android:text="6"
                                 android:textColor="@color/black"
-                                android:gravity="center"
-                                android:background="@drawable/box_theme"
-                                android:layout_marginBottom="10dp"></TextView>
+                                android:textSize="20dp"></TextView>
+
                             <TextView
-                                android:layout_width="150dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/box_theme"
+                                android:gravity="center"
                                 android:text="7"
                                 android:textColor="@color/black"
-                                android:gravity="center"
-                                android:background="@drawable/box_theme"
-                                android:layout_marginBottom="10dp"></TextView>
+                                android:textSize="20dp"></TextView>
+
                             <TextView
-                                android:layout_width="150dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/box_theme"
+                                android:gravity="center"
                                 android:text="8"
                                 android:textColor="@color/black"
-                                android:gravity="center"
-                                android:background="@drawable/box_theme"
-                                android:layout_marginBottom="10dp"></TextView>
+                                android:textSize="20dp"></TextView>
+
                             <TextView
-                                android:layout_width="150dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/box_theme"
+                                android:gravity="center"
                                 android:text="9"
                                 android:textColor="@color/black"
-                                android:gravity="center"
-                                android:background="@drawable/box_theme"
-                                android:layout_marginBottom="10dp"></TextView>
+                                android:textSize="20dp"></TextView>
+
                             <TextView
-                                android:layout_width="150dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/box_theme"
+                                android:gravity="center"
                                 android:text="10"
                                 android:textColor="@color/black"
-                                android:gravity="center"
-                                android:background="@drawable/box_theme"
-                                android:layout_marginBottom="10dp"></TextView>
-                            <TextView
-                                android:layout_width="150dp"
-                                android:layout_height="wrap_content"
-                                android:text="11"
-                                android:textColor="@color/black"
-                                android:gravity="center"
-                                android:background="@drawable/box_theme"
-                                android:layout_marginBottom="10dp"></TextView>
-                            <TextView
-                                android:layout_width="150dp"
-                                android:layout_height="wrap_content"
-                                android:text="12"
-                                android:textColor="@color/black"
-                                android:gravity="center"
-                                android:background="@drawable/box_theme"
-                                android:layout_marginBottom="10dp"></TextView>
+                                android:textSize="20dp"></TextView>
 
 
                         </LinearLayout>
 
-                    </ScrollView>
+                    </androidx.core.widget.NestedScrollView>
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -405,14 +416,15 @@
 
             <!--내 랭킹 : 테이블로 다루는게 나으려나?-->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginRight="14dp">
 
                 <ImageView
                     android:id="@+id/imageView20"
-                    android:layout_width="180dp"
-                    android:layout_height="300dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:background="@drawable/box_theme"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

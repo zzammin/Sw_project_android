@@ -28,8 +28,8 @@ public class Community extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //게시판 button 이벤트
-        //자유게시판 버튼
+        // 게시판 button 이벤트
+        // 자유게시판 버튼
         Button freeBoardBtn = (Button)view.findViewById(R.id.freeBoardBtn);
         freeBoardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +47,7 @@ public class Community extends Fragment {
                 requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_linear, cBoardCollectFragment).commit();
             }
         });
-        //정보 게시판 버튼
+        // 정보 게시판 버튼
         Button infoBtn = (Button)view.findViewById(R.id.infoBoardBtn);
         infoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +56,7 @@ public class Community extends Fragment {
                 requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_linear, cBoardInfoFragment).commit();
             }
         });
-        //공모전 게시판 버튼
+        // 공모전 게시판 버튼
         Button contestBtn = (Button)view.findViewById(R.id.contestBoardBtn);
         contestBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +65,7 @@ public class Community extends Fragment {
                 requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_linear, cBoardContestFragment).commit();
             }
         });
-        //hot 게시판 버튼
+        // hot 게시판 버튼
         Button hotBtn = (Button)view.findViewById(R.id.hotBoardBtn);
         hotBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +74,18 @@ public class Community extends Fragment {
                 requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_linear, cBoardhotFragment).commit();
             }
         });
-        //뷰페이저
+
+        // 내가 쓴 글
+        Button myWriteButton = (Button) view.findViewById(R.id.my_write);
+        myWriteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MyWrite myWrite = new MyWrite();
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_linear,myWrite).commit();
+            }
+        });
+
+        // 뷰페이저
         communityStudyPager = (ViewPager2)view.findViewById(R.id.study_pager);
         communityStudyPager.setOffscreenPageLimit(3);
         adapter = new StudyViewPagerAdapter(this);
