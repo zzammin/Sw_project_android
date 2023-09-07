@@ -21,7 +21,7 @@ public class MyPage extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.mypage, container,false);
         Button button_1 = rootView.findViewById(R.id.button_1);
         TextView tv_name = rootView.findViewById(R.id.mypage_username);
-        // Bundle에서 userName 가져오고 로그에 출력
+        // Bundle에서 userName 가져오고 로그에 출력!
         Bundle bundle = getArguments();
         String userName = bundle != null ? bundle.getString("userName", "") : "";
         // userName을 TextView에 설정
