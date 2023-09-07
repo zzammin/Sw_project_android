@@ -54,18 +54,8 @@ public class LoginActivity extends AppCompatActivity {
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     intent.putExtra("userID",userID);
                                     intent.putExtra("userPW",userPW);
+                                    intent.putExtra("userName",userName);
                                     startActivity(intent);
-
-                                    //mypage에 정보전달
-                                    Bundle bundle = new Bundle();
-                                    bundle.putString("userName",userName);
-                                    mypage.setArguments(bundle);
-
-                                    // MyPage 프래그먼트를 추가하고 트랜잭션을 커밋합니다.
-                                    FragmentTransaction transaction = fragmentManager.beginTransaction();
-                                    transaction.replace(R.id.mypage_name, mypage);
-                                    transaction.commit();
-
 
                                 }
                                 else{ // 로그인 실패,,
